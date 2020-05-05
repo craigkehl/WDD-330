@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>W02 Assignment #1</title>
+        <script>
+            function calculateSum() {
+                let sum = 0;
+                let n = parseInt(document.getElementById("txtInput").value);
+                if (isNaN(n)) {
+                    sum = "Input must be numeric.";
+                } else {
+                    for (let num = 1;  num <= n;  num++) {
+                        sum += num;
+                    }
+                }
+                document.getElementById("dvSum").innerHTML = sum;
+            }
+
+            function calculateTotal() {
+                let results = 0;
+                let n1 = parseInt(document.getElementById("txtNumber1").value);
+                let operator = document.getElementById("txtOperator").value;
+                let n2 = parseInt(document.getElementById("txtNumber2").value);
+                if (isNaN(n1) || isNaN(n2)) {
+                    total = "Input must be numeric";
+                } else {
+                    switch (operator) {
+                        case "+":
+                            results = n1 + n2;
+                            break;
+                        case "-":
+                            results = n1 - n2;
+                            break;
+                        case "*":
+                            results = n1 * n2;
+                            break;
+                        case "/":
+                            results = n1 / n2;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                document.getElementById("dvTotal").innerHTML = results;
+            }
+        </script>
+    </head>
+    <body>
+        <p>Sum of all numbers between 1 and n</p>                          
+        n: <input id="txtInput" type="text">    
+        <button id="btnSum" type="button" onclick="calculateSum()">Sum</button>
+        <div id="dvSum"></div>
+        <br>
+        <input id="txtNumber1" type="text">
+        <input id="txtOperator" type="text" value="+">        
+        <input id="txtNumber2" type="text">
+        <button id="btnAdd" type="button" onclick="calculateTotal()">Calc</button>
+        <div id="dvTotal"></div>
+    </body>       
+</html>
