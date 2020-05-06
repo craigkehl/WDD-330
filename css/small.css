@@ -15,9 +15,6 @@ body {
 }
 
 header {
-  position: fixed;
-  left: 0;
-  top: 0;
   width: 100%;
   margin: 0 auto;
 }
@@ -33,6 +30,10 @@ header, footer {
   overflow: visible;
   color: white;
   text-align: center;
+}
+
+footer {
+  font-size: .75rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -56,11 +57,13 @@ header img {
   border-radius: 8px;
 }
 
+span#sub {
+  font-size: 1rem;
+}
+
 /******* Navigation area *******/
 /*********************************/
 nav {
-  position: relative;
-  top: 190px;
   margin: auto;
 	background-color: #3c3c3b;
 	text-align: center;
