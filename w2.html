@@ -32,6 +32,89 @@
   </nav>
   <main>
     <section>
+      <h2>Topics studied</h2>
+      <ol class="w2 topics">
+        <li>Functions: Types, structure and declaration</li>
+        <dl>
+          <dt>Standard Function</dt>
+            <dd>
+              <code>function var_name(pram1, pram2, ...pram) {</code>
+              <pre><code>   z = a + b;</code></pre>
+              <pre><code>   return z;</code></pre>
+              <pre><code>}</code></pre>
+            </dd>
+            <h5 class="advantage">Advantages:</h5>
+            <ul>
+              <li>It can be very concise</li>
+            </ul>
+          <dt>Function Expression</dt>
+            <dd>
+              <pre><code>const name = function(pram1, pram2, ...pram) { return z}</code></pre>
+            </dd>
+            <h5 class="advantage">Advantages:</h5>
+            <ul>
+              <li>It can be very concise</li>
+            </ul>
+            <h5 class="warning">Disadvantages:</h5>
+            <ul>
+              <li>Must be declared before it is used</li>
+            </ul>
+            <dt>Fat Arrow Function - Standard</dt>
+              <dd>
+                <code>const add = (a, b) => {</code>
+                <pre><code>  const result = a + b;</code></pre>
+                <pre><code>  return result;</code></pre>
+                <pre><code>};</code></pre>
+              </dd>
+              <h5 class="advantage">Advantages:</h5>
+              <ul>
+                <li>It can be very concise</li>
+                <li>Semi-colon at end</li>
+                <li>No function keyword</li>
+              </ul>
+              <dt>Fat Arrow Function - shorter with one param</dt>
+                <dd>
+                  <code>const log = message => {</code>
+                  <pre><code>  console.log(message);</code></pre>
+                  <pre><code>};</code></pre>
+                </dd>
+                <h5 class="advantage">Advantages:</h5>
+                <ul>
+                  <li>You can omit parentheses if there is only one parameter</li>
+                </ul>
+                <dt>Fat Arrow Function - one expression</dt>
+                  <dd>
+                    <code>const add = (a, b) => a + b;</code>
+                  </dd>
+                  <h5 class="advantage">Advantages:</h5>
+                  <ul>
+                    <li>Very short</li>
+                    <li>Expression result is always automatically returned</li>
+                  </ul>
+        </dl>
+      </ol>
+    </section>  
+    <section>
+      <h2>Thoughts from the readings</h2>
+      <p>The material in "JavaScript: Novice to Ninja, 2nd Edition seemed way too simple as I began this week.  The code I have written to this point has seemed far more advanced than the material covered.</p>
+      <p>See the following projects and their code:</p>
+      <ul class="past_projs">
+        <li>
+          <ul>
+            <li><a href="https://craigkehl.github.io/lesson11/preston.html"></a>Weather Site Project</li>
+            <li><a href="https://github.com/craigkehl/craigkehl.github.io/blob/master/lesson11/js/forcast_api.js"></a>Inspect the forcast_api.js</li>
+          </ul>
+          <ul>
+            <li><a href="https://craigkehl.github.io/Salmon_River_Adv/adventures.html"></a>River Rafting Site Project's Trip Page</li>
+            <li><a href="https://github.com/craigkehl/craigkehl.github.io/blob/master/Salmon_River_Adv/js/trips.js">Inspect the trips.js</a></li>
+          </ul>
+          <ul>
+            <li><a href="https://craigkehl.github.io/Salmon_River_Adv/index.html "></a>River Rafting Site's Main Page</li>
+            <li><a href="https://github.com/craigkehl/craigkehl.github.io/blob/master/Salmon_River_Adv/js/move_dom_elements.js"></a>Playing with the Dom </li>
+          </ul>
+      </ul>
+    </section>  
+    <section>
       <h2>Questions from the readings</h2>
     </section>  
   </main>
