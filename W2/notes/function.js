@@ -17,15 +17,15 @@ const name = function(pram1, pram2, ...pram) { return z}
 /** Default syntax: 
  *  Same as "normal" functions, parameters and return   statement are optional. Noteworthy: Semi-colon at end, no function keyword, parentheses around parameters/ arguments.*/
 const add = (a, b) => {
-const result = a + b;
-return result;
+  const result = a + b;
+  return result;
 };  
 
 
 /** Shorter syntax, if only one parameter. Noteworthy: Parentheses around parameter list can be omitted */
 const log = message => {
-console.log(message);
-return z;
+  console.log(message);
+  return z;
 };  
 
 
