@@ -55,6 +55,7 @@ h2 {
   border-bottom: 2px solid black;
   font-size: 1rem;
   margin-bottom: 0.5rem;
+  margin-top: 1.5rem;
 }
 header img {
   width: 100px;
@@ -82,10 +83,49 @@ dt {
 }
 
 dl {
-  background-color: antiquewhite;
   padding: 15px;
 }
+section.functions.card,
+section.array.card {
+  background-color: antiquewhite;
+  box-shadow: 4px 4px 6px grey;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
+}
 
+section.array p,
+section.array code {
+  padding: 1rem;
+}
+
+section.array code {
+  color: orangered;
+  font-weight: 600;
+  overflow: hidden;
+}
+
+div.code {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#arrayAddBtn {
+  margin: 1rem;
+}
+
+span.command {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+h2.return {
+  text-align: center;
+  padding-bottom: 2rem;
+
+}
 /******* Navigation area *******/
 /*********************************/
 nav {

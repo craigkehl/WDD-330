@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+  <link rel="stylesheet" href="/css/small.css">
+  <link rel="stylesheet" href="/css/medium.css">
+</head>
+<body>
+  <header>
+    <h1 id="array_home">Arrays Alive</h1>
+  </header>   
+  <nav>
+    <ul class="navigation">
+      <li><a class="hamburger">&#9776; Menu</a></li>
+      <li><a href="/index.html">Home</a></li>        
+      <li><a href="/w1.html">Week 01: </a></li>
+      <li><a href="/w2.html">Week 02: </a></li>
+      <li><a href="/w3.html" class="active">Week 03: </a></li>
+      <li><a href="/w4.html">Week 04: </a></li>
+      <li><a href="/w5.html">Week 05: </a></li>
+      <li><a href="/w6.html">Week 06: </a></li>
+      <li><a href="/w7.html">Week 07: </a></li>
+      <li><a href="/w8.html">Week 08: </a></li>
+      <li><a href="/w9.html">Week 09: </a></li>
+      <li><a href="/w10.html">Week 10: </a></li>
+      <li><a href="/w11.html">Week 11: </a></li> 
+      <li><a href="/w12.html">Week 12: </a></li>
+    </ul>
+  </nav>
+  <main>
+    <h2 class="return"><a href="/w3.html">Return to Week 3 Notes</a></h2>
+      <ol class="anchor list">
+        <li><a href="#array1">Ways to Create Arrays</a></li>
+        <li><a href="#array2">What can arrays hold?</a></li>
+        <li><a href="#array3">Adding items to Arrays</a></li>
+        <li><a href="#array4"></a></li>
+      </ol>
+
+    <h2 id="array1">Here are different ways to create arrays</h2>
+
+    <section class="array create1 card">
+      <div class="array create1 card definition">
+        <p>Most standard way of creating an array and populating it in the same statement. By passing in more than one number separated by commas populates the array with those numbers</p>  
+      </div>
+      <div class="code">
+        <code class="array create1 card code">const arr = [1, 2, 3, 4];</code>  
+      </div>  
+    </section>
+
+    <!--  Calling Array constructor -->
+    <section class="array create2 card">
+      <div class="array create2 card definition">
+        <p>
+          The following three ways create empty arrays of length 1. Passing in a single number defines the length but does not populate the array.
+        </p>  
+      </div>
+      <div class="code">
+        <code class="array create2 card code">
+          const arr1 = [1];
+        </code>
+        <p>Assumed calling the contructor</p>
+        <code class="array create3 card code">
+          const arr2 = new Array(1);
+        </code>
+        <p>Calls the constructor method with the parameter designating the length.</p>
+        <code class="array create4 card code">
+          const arr3 = Array(1);
+        </code>
+      </div>
+      <p>"new" keyword ommitted</p>  
+    </section>
+
+    <!-- Assummed population intent      -->
+    <section class="array create5 card">
+      <div class="array create5 card definition">
+        <p>
+          Javascript assumes you are populating and constructing an array if you provide comma separated values.
+        </p>  
+      </div>
+      <div class="code">
+        <code class="array create5 card code">
+          const arr2a = Array(2, 4, 6);
+        </code>
+      </div>  
+    </section>
+
+    <!--     Passing a String -->
+    <section class="array create6 card">
+      <div class="array create6 card definition">
+        <p>
+          Because a string is being passed, an array populated with that string is created. Very forgiving.
+        </p>  
+      </div>
+      <div class="code">
+        <code class="array create6 card code">
+          const arr4 = ['Hi'];
+        </code>
+        <p>or</p>
+        <code class="array create7 card code">
+          const arr5 = Array('Hi');
+        </code>  
+        <p>or</p>
+        <code class="array create8 card code">
+          const arr6 = new Array('Hi');
+        </code>
+      </div>  
+    </section>
+
+    <!--     Array.of() method   -->
+    <section class="array create9 card">
+      <div class="array create9 card definition">
+        <p>
+          <strong>Array.of()</strong> calls the Array constructor of (items,). So, both a single number or any item creates an array and populates it with the items listed.
+        </p>  
+      </div>      
+      <div class="code">
+        <code class="array create9 card code">
+          const arr7 = Array.of(1);
+        </code>
+        <code class="array create10 card code">
+          const arr10 = Array.from(1);
+        </code>
+      </div>  
+    </section>
+
+    <h2 id="array2">What can arrays hold?</h2>
+    <section class="array contain1 card">
+      <div class="array contain1 card definition">
+        <ul>
+          <li>A collection of any data type</li>
+          <li>A collection of objects</li>
+          <li>A collection of other arrays</li>
+          <li>Any combination</li> 
+      </div>      
+      <div class="code">
+        <code class="array contain1 card code">
+          const hobbies = ['reading', 'fly fishing', 'calculus'];
+        </code>  
+        <code class="array contain2 card code">
+          const mixData = [23, 'BMW', {key: 'value'}];
+        </code>  
+      </div>
+    </section>
+
+    <h2 id="array3">Adding items to an array</h2>
+    <section class="array add1 card">
+      <div class="array add1 card definition">
+        <p>
+          <strong>push()</strong> adds items to the end of an array. While <strong>unshift()</strong> adds items to the beginning. <span class="command">Open the dev console.</span> Then push the 'Test me' button. Notice the GreatBooks array with three books. <strong>push()</strong> with then add one book to the end. After that <strong>unshift()</strong> will add on book to the start.
+        </p>  
+      </div>
+      <div class="code">
+        <code class="array add1 card code">
+          const greatBooks = ['To Kill A Mocking Bird', 'As a Man Thinketh', 'Make It Stick'];
+          console.log(greatBooks);
+
+          greatBooks.push('The Goal');
+
+          greatBooks.unshift('Good to Great');
+        </code>
+      </div>
+      <button id="arrayAddBtn">Test me</button>
+      <p>Remember: Open the Dev Console to see the arrays.</p>
+    </section>
+
+    <section class="array create2 card">
+      <div class="array create2 card definition">
+        <p>
+
+        </p>  
+      </div>
+      <code class="array create2 card code">
+        
+      </code>  
+    </section>
+
+    <section class="array create2 card">
+      <div class="array create2 card definition">
+        <p>
+
+        </p>  
+      </div>
+      <code class="array create2 card code">
+        
+      </code>  
+    </section>
+
+    <section class="array create2 card">
+      <div class="array create2 card definition">
+        <p>
+
+        </p>  
+      </div>
+      <code class="array create2 card code">
+        
+      </code>  
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</main>
+
+<footer>
+  <p>
+    &copy;2020 | Craig H. Kehl | Utah |
+    <a href="https://www.byui.edu/online">BYUI Online Learning</a><br>
+    <span id="lastMod"></span>
+  </p>      
+</footer>
+<script src="/js/main.js" language="Javascript"></script>
+<script src="/js/hamburger_menu.js" language="Javascript"></script>
+<script src="array.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+<script>WebFont.load({google: {families: ['PT+Serif', 'Roboto']}});</script>
+</body>
+</html>

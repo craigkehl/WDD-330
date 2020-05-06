@@ -22,7 +22,7 @@
 
 /********** Stretch ***********/
 /** Retrieve DOM elements */
-const btnAdd = document.getElementById('btnAdd');
+const btnAdd = document.getElementById('btnAdd2');
 const btnSub = document.getElementById('btnSub');
 const btnMult = document.getElementById('btnMult');
 const btnDiv = document.getElementById('btnDiv');

@@ -36,20 +36,23 @@
       <ol class="w2 topics">
         <li>Functions: Types, structure and declaration</li>
         <dl>
-          <dt>Standard Function</dt>
-            <dd>
-              <code>function var_name(pram1, pram2, ...pram) {</code>
-              <pre><code>   z = a + b;</code></pre>
-              <pre><code>   return z;</code></pre>
-              <pre><code>}</code></pre>
-            </dd>
+          <section class="functions card">
+            <dt>Standard Function</dt>
+              <dd>
+                <code>function var_name(pram1, pram2, ...pram) {</code>
+                <pre><code>   z = a + b;</code></pre>
+                <pre><code>   return z;</code></pre>
+                <pre><code>}</code></pre>
+              </dd>
             <h5 class="advantage">Advantages:</h5>
             <ul>
               <li>It can be very concise</li>
             </ul>
-          <dt>Function Expression</dt>
-            <dd>
-              <pre><code>const name = function(pram1, pram2, ...pram) { return z}</code></pre>
+          </section>
+          <section class="functions card">
+            <dt>Function Expression</dt>
+              <dd>
+                <pre><code>const name = function(pram1, pram2, ...pram) { return z}</code></pre>
             </dd>
             <h5 class="advantage">Advantages:</h5>
             <ul>
@@ -59,6 +62,8 @@
             <ul>
               <li>Must be declared before it is used</li>
             </ul>
+          </section>
+          <section class="functions card">
             <dt>Fat Arrow Function - Standard</dt>
               <dd>
                 <code>const add = (a, b) => {</code>
@@ -66,46 +71,42 @@
                 <pre><code>  return result;</code></pre>
                 <pre><code>};</code></pre>
               </dd>
+            <h5 class="advantage">Advantages:</h5>
+            <ul>
+              <li>It can be very concise</li>
+              <li>Semi-colon at end</li>
+              <li>No function keyword</li>
+            </ul>
+          </section>
+          <section class="functions card">
+            <dt>Fat Arrow Function - shorter with one param</dt>
+              <dd>
+                <code>const log = message => {</code>
+                <pre><code>  console.log(message);</code></pre>
+                <pre><code>};</code></pre>
+              </dd>
+            <h5 class="advantage">Advantages:</h5>
+            <ul>
+              <li>You can omit parentheses if there is only one parameter</li>
+            </ul>
+          </section>
+          <section class="functions card">
+            <dt>Fat Arrow Function - one expression</dt>
+              <dd>
+                <code>const add = (a, b) => a + b;</code>
+              </dd>
               <h5 class="advantage">Advantages:</h5>
               <ul>
-                <li>It can be very concise</li>
-                <li>Semi-colon at end</li>
-                <li>No function keyword</li>
+                <li>Very short</li>
+                <li>Expression result is always automatically returned</li>
               </ul>
-              <dt>Fat Arrow Function - shorter with one param</dt>
-                <dd>
-                  <code>const log = message => {</code>
-                  <pre><code>  console.log(message);</code></pre>
-                  <pre><code>};</code></pre>
-                </dd>
-                <h5 class="advantage">Advantages:</h5>
-                <ul>
-                  <li>You can omit parentheses if there is only one parameter</li>
-                </ul>
-                <dt>Fat Arrow Function - one expression</dt>
-                  <dd>
-                    <code>const add = (a, b) => a + b;</code>
-                  </dd>
-                  <h5 class="advantage">Advantages:</h5>
-                  <ul>
-                    <li>Very short</li>
-                    <li>Expression result is always automatically returned</li>
-                  </ul>
-          </dl>
+          </section>
+        </dl>
         <li>Callback functions</li>
         <li>Bind() method</li>
         <li>The Rest Parameter</li>
         <li>Traversing the Dom</li>
-        <li>Iterables vs. "Array-Like" Objects</li>
-        <li>Array creation options</li>
-        <li>Array manipulation</li>
-          <ul>
-            <li>push(), pop()</li>
-            <li>unshift(), shift()</li>
-            <li>splice()</li>
-            <li>slice()</li>
-          </ul>
-
+        <li>Iterables vs. "Array-Like" Objects</li>        
       </ol>
     </section>  
     <section>
@@ -128,9 +129,39 @@
           </ul>
       </ul>
     </section>  
-    <section>
-      <h2>Questions from the readings</h2>
-    </section>  
+    <section class="team">
+      <h2>Team Project</h2>
+      
+      <p>Sum of all numbers between 1 and n</p>                          
+      n: <input id="txtInput" type="text">    
+      <button id="btnSum" type="button" onclick="calculateSum()">Sum</button>
+      <div id="dvSum"></div>
+      <br>
+      <input id="txtNumber1" type="text">
+      <input id="txtOperator" type="text" value="+">        
+      <input id="txtNumber2" type="text">
+      <button id="btnAdd" type="button" onclick="calculateTotal()">Calc</button>
+      <div id="dvTotal"></div>
+    </section>
+    <section class="team">
+      <h2>Strecht Goals</h2>
+      
+  <div>
+    <input type="number" id="num1_input" placeholder="Enter 1st number">
+    <input type="number" id="num2_input" placeholder="Enter 2nd number">
+  </div>
+  <div>
+    <button type="button" id="btnAdd2">Add</button>
+    <button type="button" id="btnSub">Subtract</button>
+    <button type="button" id="btnMult">Mulitply</button>
+    <button type="button" id="btnDiv">Divide</button>
+  </div>
+  <div id="output"></div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
   </main>
   <footer>
     <p>
@@ -139,9 +170,52 @@
       <span id="lastMod"></span>
     </p>      
   </footer>
-  <script src="/js/main.js" language="Javascript"></script>
+  <script src="js/main.js" language="Javascript"></script>
   <script src="js/hamburger_menu.js" language="Javascript"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
   <script>WebFont.load({google: {families: ['PT+Serif', 'Roboto']}});</script>
+  <script src="W2/Team_personal_stretch/js/app.js"></script>
+  <script>
+    function calculateSum() {
+        let sum = 0;
+        let n = parseInt(document.getElementById("txtInput").value);
+        if (isNaN(n)) {
+            sum = "Input must be numeric.";
+        } else {
+            for (let num = 1;  num <= n;  num++) {
+                sum += num;
+            }
+        }
+        document.getElementById("dvSum").innerHTML = sum;
+    }
+
+    function calculateTotal() {
+        let results = 0;
+        let n1 = parseInt(document.getElementById("txtNumber1").value);
+        let operator = document.getElementById("txtOperator").value;
+        let n2 = parseInt(document.getElementById("txtNumber2").value);
+        if (isNaN(n1) || isNaN(n2)) {
+            total = "Input must be numeric";
+        } else {
+            switch (operator) {
+                case "+":
+                    results = n1 + n2;
+                    break;
+                case "-":
+                    results = n1 - n2;
+                    break;
+                case "*":
+                    results = n1 * n2;
+                    break;
+                case "/":
+                    results = n1 / n2;
+                    break;
+                default:
+                    break;
+            }
+        }
+        document.getElementById("dvTotal").innerHTML = results;
+    }
+</script>
 </body>
 </html>
