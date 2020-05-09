@@ -45,9 +45,10 @@ const arr10 = Array.from(1);
 
 //  /**  Adding items to an array */
 //  const displayArray = document.getElementById('array_display1');
+ let greatBooks = [];
  const arrayAddBtn = document.getElementById('arrayAddBtn'); 
  const arrayAdd = () => {
-  const greatBooks = ['To Kill A Mocking Bird', 'As a Man Thinketh', 'Make It Stick'];
+  greatBooks = ['To Kill A Mocking Bird', 'As a Man Thinketh', 'Make It Stick'];
   console.log(greatBooks);
   // Notice the three books in the array.
   // Now let's add one. 
@@ -59,3 +60,133 @@ const arr10 = Array.from(1);
  }
 
  arrayAddBtn.addEventListener('click', arrayAdd);
+
+
+ /** not yet added to notebook */
+ /****  pop() shift()   ****/
+ const arraySub = () => {
+   const popped = greatBooks.pop(); // removes the last element from the array.
+   console.log(greatBooks);
+   console.log(popped);
+   const shifted = greatBooks.shift(); // removes the first element from the array
+      console.log(greatBooks);
+   console.log(shifted);
+ }
+
+ /** splice() let's you choose any position in the array and remove any number of items, add items or replace them. It returns the new length. */
+ // Here I added four more of my favorite books.
+ greatBooks.splice(0, 0, 'The Challenger Sale', 'The Power of Habit', 'The Right It', 'Essential Scrum');
+
+ /** slice() is different in that it creates a new array sliced from any part of the whole of the array being copied */
+ const greatBooksforMySon = greatBooks.slice(0,); // parameters are start location (inclusive) to the end location (not-inclusive).
+
+/****  concat() ***
+ * Will grab the existing elements of its array and can concatinate it with other arrays, extracting the other arrays elements also and creating a new array with the concatinated results.
+ */
+
+ const part1 = [15, 20, 25];
+ const part2 = [30, 35, 40];
+ const whole = part1.concat(part2); // whole = [15, 20, 25, 30, 35, 40]
+
+
+ /***************** array.indexOf() and array.lastIndexOf() ************** 
+  * If I need to find the index of a value, I can use the indexOf() method. It only returns the first instance it finds. lastIndexOf() finds the last instance. If none is found it returns -1 */
+
+ const myIndex = whole.indexOf(35); // myIndex = 4
+
+const personalData = [{ name: 'Max' }, { name: 'Manuel' }];
+const indx = personalData.indexOf({ name: 'Manuel' });
+console.log(indx);
+
+
+ /******** array.find() and array.findIndex() ********/
+ const manuel = personalData.find((person, idx, persons) => {
+   return person.name === 'Manuel';
+ });
+
+
+
+/**************** for of loop ***********************/
+const prices = [10.99, 5.99, 3.99, 6.59];
+const tax =0.19;
+const taxAdjustedPrices = [];
+
+for (const price of prices) {
+  taxAdjustedPrices.push(Math.round(price * (1 + tax)*100)/100);
+}
+
+
+/**************** array.forEach() ***********************/
+const prices = [10.99, 5.99, 3.99, 6.59];
+const tax =0.19;
+const taxAdjustedPrices = [];
+
+prices.forEach((price, idx, prices)=> {
+  const priceObj = {index: idx, taxAdjPrices: price * (1 + tax)}
+  taxAdjustedPrices.push(priceObj); // Does not return an object, so we much push a new one
+});
+
+
+/******************* array.map()   **********************/
+const prices = [10.99, 5.99, 3.99, 6.59];
+const tax =0.19;
+
+const taxAdjustedPrices = prices.map((price, idx, prices) => {
+  const priceObj = { index: idx, taxAdjPrices: price * (1 + tax)};
+  return priceObj;  // returns new object
+});
+
+console.log(prices, taxAdjustedPrices);
+
+/************* array.sort() and array.reverse() ***********/
+
+
+/***************** array.filter()  ******************** */
+// full standard form
+const filteredArray = prices.filter((price, index, prices) => {
+  return price > 6; //the filter - only return prices greater than 6.
+});
+
+// condensed to minium required for an Arrow Function
+const sum = prices.filter(p => p > 6);
+
+
+/******************  array.reduce() ********************/
+// full standard form
+const sum = prices.reduce((prevValue, curValue, curIndex, prices) => {
+  return prevValue + curValue;  
+}, 0);
+
+// condensed to minium required for an Arrow Function
+const sum = prices.reduce((prevValue, curValue) => prevValue + curValue, 0);
+
+
+/********************* method chaining *******************/
+const originalArray = [{price: 10.99}, {price: 5.99}, {price: 29.99}];
+const sum = originalArray.map(obj => obj.price).reduce((sumVal, curVal) => sumVal + curVal, 0); 
+
+
+
+
+/************* string.split('delimiter') ******************/
+const data = 'new york;10.99;2000';
+
+const transformedData = data.split(';');
+transformedData[1] = +transformedData[1];
+
+
+
+/************* array.join('separator') *********************/
+// join fragments together. This is one way you could write data to file as text and us split to restore it after you have read it back in.
+
+const nameFragments = ['Max', 'Schwarz'];
+const name = nameFragments.join(' '); // joined with whitespace
+console.log(name);
+
+/***************** spread operator ... ********************/
+const copiedNameFragments = [...nameFragments]; // a new copy is made, not a reference, but a copy.
+
+// The spread operator can also help convert string numbers to primitive type numbers. See prices on line 131.
+console.log(Math.min(prices)); //will not work, because the prices aren't a number.
+
+console.log(Math.min(...prices)); //now the copy array is numbers and works to find the lowest number.
