@@ -1,0 +1,56 @@
+// base color variables
+$grey: lightgrey;
+
+
+
+// element color variable
+$darkbackground: black;
+$lightbackground: white;
+
+// size variables
+$grid_gap: 2vw;
+$block_width: 80vw;
+$block_maxwidth: 140rem;
+
+// font
+$font_base_size: 10px;
+
+html {
+font-size: $font_base_size;
+}
+
+.game {
+    background-color: $darkbackground;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $grid_gap;  
+}
+
+.game__card {
+	position: relative;
+  background-color: $lightbackground;
+  width: 100%;
+  &:before {
+    content: "";
+    display: block;
+    padding-top: 100%; 	/* ratio of 1:1*/
+  }
+}
+
+.game__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  background-color: white;
+}
+
+.player_1 {
+  clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+}
+
+.player_2 {
+  clip-path: ellipse(50% 50% at 50% 50%);
+}
