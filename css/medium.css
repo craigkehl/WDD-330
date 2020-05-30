@@ -16,8 +16,10 @@
 
   header img {
     float: right;
-    box-shadow: 0 0 30px grey;
+    box-shadow: 0 0 3px grey;
     border-radius:0 10px 0 0;
+    margin: .25rem 1rem 0 0;
   }
 
+  
 }

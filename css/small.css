@@ -12,12 +12,14 @@ body {
   font-family: 'Roboto', sans-serif;
   height: 100%;
   /* margin: 1em auto 1em auto; */
+  display: grid;
+  grid-template-rows: ;
 }
 
 header, footer, main {
   width: 100%;
   margin: 0 auto;
-  padding: .75rem;
+  padding-top: .75rem;
   max-width: 45rem;
 }
 
@@ -27,6 +29,7 @@ header, footer {
   color: white;
   text-align: center;
 }
+
 
 footer {
   font-size: .75rem;
@@ -148,7 +151,6 @@ nav {
   margin: auto;
 	background-color: #3c3c3b;
 	text-align: center;
-  box-shadow: 0 2px 15px gray;
   /* padding: .5em; */
 }
 .navigation {
