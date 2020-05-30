@@ -117,53 +117,53 @@ for (const price of prices) {
 
 
 /**************** array.forEach() ***********************/
-const prices = [10.99, 5.99, 3.99, 6.59];
-const tax =0.19;
-const taxAdjustedPrices = [];
+const prices1 = [10.99, 5.99, 3.99, 6.59];
+const tax1 =0.19;
+const taxAdjustedPrices1 = [];
 
-prices.forEach((price, idx, prices)=> {
-  const priceObj = {index: idx, taxAdjPrices: price * (1 + tax)}
-  taxAdjustedPrices.push(priceObj); // Does not return an object, so we much push a new one
+prices1.forEach((price, idx, prices)=> {
+  const priceObj1 = {index: idx, taxAdjPrices: price * (1 + tax1)}
+  taxAdjustedPrices1.push(priceObj1); // Does not return an object, so we much push a new one
 });
 
 
 /******************* array.map()   **********************/
-const prices = [10.99, 5.99, 3.99, 6.59];
-const tax =0.19;
+const prices2 = [10.99, 5.99, 3.99, 6.59];
+const tax2 =0.19;
 
-const taxAdjustedPrices = prices.map((price, idx, prices) => {
-  const priceObj = { index: idx, taxAdjPrices: price * (1 + tax)};
-  return priceObj;  // returns new object
+const taxAdjustedPrices2 = prices2.map((price, idx, prices) => {
+  const priceObj2 = { index: idx, taxAdjPrices: price * (1 + tax2)};
+  return priceObj2;  // returns new object
 });
 
-console.log(prices, taxAdjustedPrices);
+console.log(prices2, taxAdjustedPrices2);
 
 /************* array.sort() and array.reverse() ***********/
 
 
 /***************** array.filter()  ******************** */
 // full standard form
-const filteredArray = prices.filter((price, index, prices) => {
+const filteredArray = prices2.filter((price, index, prices) => {
   return price > 6; //the filter - only return prices greater than 6.
 });
 
 // condensed to minium required for an Arrow Function
-const sum = prices.filter(p => p > 6);
+const sum = prices2.filter(p => p > 6);
 
 
 /******************  array.reduce() ********************/
 // full standard form
-const sum = prices.reduce((prevValue, curValue, curIndex, prices) => {
+const sum1 = prices2.reduce((prevValue, curValue, curIndex, prices) => {
   return prevValue + curValue;  
 }, 0);
 
 // condensed to minium required for an Arrow Function
-const sum = prices.reduce((prevValue, curValue) => prevValue + curValue, 0);
+const sum2 = prices.reduce((prevValue, curValue) => prevValue + curValue, 0);
 
 
 /********************* method chaining *******************/
 const originalArray = [{price: 10.99}, {price: 5.99}, {price: 29.99}];
-const sum = originalArray.map(obj => obj.price).reduce((sumVal, curVal) => sumVal + curVal, 0); 
+const sum3 = originalArray.map(obj => obj.price).reduce((sumVal, curVal) => sumVal + curVal, 0); 
 
 
 
