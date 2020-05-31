@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>My ToDo App</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/small.css">
   <link rel="stylesheet" href="./css/medium.css">
+  <link rel="stylesheet" href="./css/todo.css">
 </head>
 <body>
   <header>
-    <h1>Week 6 notes</h1>  
+    <h1 class="card">My ToDos</h1>
     <nav>
       <ul class="navigation">
         <li><a class="hamburger">&#9776; Menu</a></li>
@@ -30,11 +31,45 @@
       </ul>
     </nav>
   </header> 
-  <main>
-    <section>
-      <h2><a href="./W6/todo.html">Link to my todo Project</a></h2>
 
-    </section>  
+  <main>
+    <section id="user-input" class="card">
+      <div class="control">
+        <label for="newTodoInput">Add New Task</label>
+        <input type="text" name="newTodoInput" id="newTodoInput"/>
+      </div>
+      <button id="add-task-btn">Add Task</button>
+    </section>
+    <section id="todo-section" class="card">
+      <fieldset>
+        <legend>Select which Todos to list</legend>
+        <div class="Comp info singleLine">
+          <div class="info">
+            <label>Total</label>
+            <span id="numTodos"></span>
+          </div>
+          <div>
+            <label for="selAll">All</label>
+            <input type="radio" id="selAll" name="tasksFilter" />
+          </div>
+          <div>
+            <label for="selOpen">Open</label>
+            <input type="radio" id="selOpen" name="tasksFilter" />
+          </div>
+          <div>
+            <label for="selDone">Done</label>
+            <input type="radio" id="selDone" name="tasksFilter" />
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Selected list of Todos</legend>
+        <div id="todo-list" class="Component info">
+          
+        </div>
+      </fieldset>    
+    </section>
+    
   </main>
   <footer>
     <p>
@@ -43,9 +78,11 @@
       <span id="lastMod"></span>
     </p>      
   </footer>
+  <script src="./scripts/todos.js" type="module"></script>
   <script src="/js/main.js" language="Javascript"></script>
   <script src="js/hamburger_menu.js" language="Javascript"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
   <script>WebFont.load({google: {families: ['PT+Serif', 'Roboto']}});</script>
 </body>
+
 </html>

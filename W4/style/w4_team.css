@@ -2,6 +2,19 @@ html {
   font-size: 10px;
 }
 
+h1 {
+  display: block;
+  font-size: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+input {
+  margin: 2rem;
+}
+
 .game {
   background-color: black;
   display: -ms-grid;
@@ -9,6 +22,10 @@ html {
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
   gap: 2vw;
+  width: 80vw;
+  max-width: 140rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .game__card {
@@ -42,5 +59,9 @@ html {
 .player_2 {
   -webkit-clip-path: ellipse(50% 50% at 50% 50%);
           clip-path: ellipse(50% 50% at 50% 50%);
+}
+
+.win {
+  color: red;
 }
 /*# sourceMappingURL=w4_team.css.map */
