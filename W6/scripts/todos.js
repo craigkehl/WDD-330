@@ -34,7 +34,8 @@ function newTaskHandler() {
 }
 
 function newTodo( descripton ) {
-  const newTodo = new ToDo(descripton, create_UUID());
+  // const newTodo = new ToDo(descripton, create_UUID());
+  const newTodo = new ToDo(descripton,'');
   todosArr.push(newTodo);
 }
 
@@ -59,14 +60,20 @@ function drawTaskList() {
   todosArr.filter(todo=>{
     return filterArr.includes(todo.Status)
   }).forEach(
-    todo => {        
-      todoList.innerHTML += 
-        `<div class="todo_card">
-          <span>${showDate(todo.Id)}</span>
-          <span>${todo.Description}</span>
-          <input id='c-${count}' type="checkbox" value=${todo.Status}" onclick="statusChange(${todo})">
-          <button id='d-${count}'><img src="./images/del_icon.png" alt="delete"></button>
-        </div>`;
+    todo => {       
+      todoList.innerHTML +=  
+      `<div class="todo_card">
+        <span>${todo.Description}</span>
+        <input id='c-${todo.Id}' type="checkbox" value=${todo.Status}" onclick="statusChange(${todo})">
+        <button id='d-${todo.Id}'><img src="./images/del_icon.png" alt="delete"></button>
+      </div>`;       
+      // todoList.innerHTML += 
+      //   `<div class="todo_card">
+      //     <span>${showDate(todo.Id)}</span>
+      //     <span>${todo.Description}</span>
+      //     <input id='c-${count}' type="checkbox" value=${todo.Status}" onclick="statusChange(${todo})">
+      //     <button id='d-${count}'><img src="./images/del_icon.png" alt="delete"></button>
+      //   </div>`;
       ++count;  
   });  
   totalSel.textContent = count.toString();
@@ -87,9 +94,8 @@ function writeStor(){
 
 function readStor(){
   if (window.localStorage) {
-    if ("todos" in localStorage) {
-      const buildArr = JSON.parse(localStorage.todos);
-      buildArr.forEach(todo => newTodo(todo));
+    if (localStorage.todos) {
+      todosArr = JSON.parse(localStorage.todos);
       drawTaskList();
     }
   }
@@ -115,9 +121,10 @@ function filterHandler(filter) {
 }
 
 function statusChange(obj) {
-  obj.Status = true;
-  writeStor();
-  drawTaskList();
+  console.log(obj);
+  // obj.Status = true;
+  // writeStor();
+  // drawTaskList();
 }
 
 // function delTodo(index) {

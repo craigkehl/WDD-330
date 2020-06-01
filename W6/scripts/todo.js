@@ -4,10 +4,11 @@
  */
  export class ToDo {
         constructor(description, uniqueId, status = false) {      
-            this.Id = new Date(),
+            this.Id = Date.now(),
             this.Description = description,            
             this.UUID = uniqueId,
-            this.Status = status
+            this.Status = status,
+            this.Created = new Date()
 
     }
 
