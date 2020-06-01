@@ -64,7 +64,7 @@ function drawTaskList() {
         `<div class="todo_card">
           <span>${showDate(todo.Id)}</span>
           <span>${todo.Description}</span>
-          <input id='c-${count}' type="checkbox" value=${todo.Status}" onclick="statusChange(${todo})">
+          <input id='c-${count}' type="checkbox" value=${todo.Status}">
           <button id='d-${count}'><img src="./images/del_icon.png" alt="delete"></button>
         </div>`;
       ++count;  
@@ -114,29 +114,27 @@ function filterHandler(filter) {
   return filterArr;
 }
 
-function statusChange(obj) {
-  obj.Status = true;
-  writeStor();
-  drawTaskList();
+function statusChange(objIndex) {
+  todosArr[objIndex].status = !todosArr[objIndex].status;
 }
 
-// function delTodo(index) {
-//   if (index > -1) {
-//     array.splice(index, 1);
-//     drawTaskList();
-//   }
-// }
+function delTodo(index) {
+  if (index > -1) {
+    array.splice(index, 1);
+    drawTaskList();
+  }
+}
 
-// function editTodoHandler(e) {
-//   console.log(e.target.Id);
-//   if (e.target.Id.charAt(0)=='c') {
-//     let index = e.target.Id.substr(2);
-//     statusChange(index);
-//   } else if  (e.target.Id.charAt(0)=='d') {
-//       let index = e.target.Id.substr(2);
-//       delTodo(index);
-//   }
-// }
+function editTodoHandler(e) {
+  console.log(e.target.Id);
+  if (e.target.Id.charAt(0)=='c') {
+    let index = e.target.Id.substr(2);
+    statusChange(index);
+  } else if  (e.target.Id.charAt(0)=='d') {
+      let index = e.target.Id.substr(2);
+      delTodo(index);
+  }
+}
 
 
 function create_UUID(){
@@ -153,5 +151,5 @@ newTaskBtn.addEventListener('click', newTaskHandler);
 allTaskBtn.addEventListener('click', filterHandler.bind(this, 'all'));
 openTaskBtn.addEventListener('click', filterHandler.bind(this, 'open'));
 doneTaskBtn.addEventListener('click', filterHandler.bind(this, 'done'));
-// todoList.addEventListener('click', editTodoHandler);
+todoList.addEventListener('click', editTodoHandler);
 
