@@ -18,29 +18,18 @@ const allTaskBtn = document.getElementById("selAll");
 const openTaskBtn = document.getElementById('selOpen');
 const doneTaskBtn = document.getElementById('selDone');
 const todoList = document.getElementById('todo-list');
-const newDesc = document.getElementById('newTodoInput');
 
 let todosArr = [];
 let filterArr = [false];
-lauchProg(drawTaskList);
-
-function lauchProg(_callback) {
-  if (readStor('todos')) { todosArr = readStor('todos')}
-  _callback();
-}
-
-function keyHandler() {
-  if (event.keyCode === 13) {
-    newTaskHandler();
-  }
-}
+readStor();
 
 function newTaskHandler() {
+  const newDesc = document.getElementById('newTodoInput');
   if (isEmpty(newDesc.value.trim())) {
     alert("You must enter a name or describe your task to add it.");
     return;
   }
-  newTodo(newDesc.value, ); 
+  newTodo(newDesc.value, ); // Question - Do I need another comma for the date created?
   writeStor();
   newDesc.value = '';
   drawTaskList();
@@ -78,14 +67,15 @@ function drawTaskList() {
 
   // construct a current list
   todosArr.filter(todo => {
-    return filterArr.includes(todo.Status)}).forEach(
+    return filterArr.includes(todo.Status)
+  }).forEach(
     todo => {
       todoList.innerHTML +=
         `<div class="todo_card">
-        <span class="date">${showDate(todo.Created)}</span>
-        <span id='s-${todo.Id}' class='${todo.Status?'done':''}'>${todo.Description}</span>
-        <input id='c-${todo.Id}' type="checkbox" ${todo.Status?'checked':''} onClick="statusUpdate(${todo.Status}, ${todo.Id})">
-        <button id='d-${todo.Id}'><img src="./images/del_icon.png" onClick="deleteObj(${todo.Id})" alt="delete" ></button>
+        <span>${showDate(todo.Created)}</span>
+        <span>${todo.Description}</span>
+        <input id='c-${todo.Id}' type="checkbox" value="${todo.Status}">
+        <button id='d-${todo.Id}'><img src="./images/del_icon.png" alt="delete" ></button>
       </div>`;
       ++count;
     });
@@ -93,16 +83,17 @@ function drawTaskList() {
   console.log(count);
 }
 
-function showDate(dateObj) {
-  const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]; 
-  return dateObj.getDate() + " " + months[dateObj.getMonth()] + ",</br>" + dateObj.getFullYear();
+function showDate(timestamp) {
+  const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+  return timestamp.getDate() + " " + months[timestamp.getMonth()] + ",</br>" + timestamp.getFullYear();
 }
 
-function readStor(file) {
+function readStor() {
   if (window.localStorage) {
-    if (localStorage[file]) {
-      return JSON.parse(localStorage[file]);       
-    } 
+    if (localStorage.todos) {
+      todosArr = JSON.parse(localStorage.todos);
+      drawTaskList();
+    }
   }
 }
 
@@ -125,24 +116,34 @@ function filterHandler(filter) {
   return filterArr;
 }
 
-window.statusUpdate = function (objStatus, objId) {
-    const currObj = todosArr.find(todo => todo.Id == objId);
-    currObj.Status = !objStatus;
-    const objDescClass = document.getElementById(`s-${objId}`).classList;
-    currObj.Status ? objDescClass.add('done'): objDescClass.remove('done');
-    drawTaskList();
+function statusChange(objId) {
+  console.log(objId);
+  // obj.Status = true;
+  // writeStor();
+  // drawTaskList();
 }
 
-window.deleteObj = function(objId) {
-  debugger
-    const newArr = todosArr.filter(todo => todo.Id != objId);    
-    todosArr = newArr;
-    drawTaskList();
+function delTodo(objId) {
+  console.log(objId);
+  //   if (objId > -1) {
+  //     array.splice(objId, 1);
+  //     drawTaskList();
+  //   }
+}
+
+function parseTodoHandler(e) {
+  const btnId = e.target.parentNode.id;
+  const checkId = e.target.id;
+  if (checkId && checkId.charAt(0) == 'c') {   
+    statusChange(checkId.substr(2, checkId.length - 2));
+  } else if (btnId && btnId.charAt(0) == 'd') {
+    delTodo(btnId.substr(2, btnId.length - 2));
+  }
 }
 
 
 newTaskBtn.addEventListener('click', newTaskHandler);
-newDesc.addEventListener("keyup", keyHandler);
 allTaskBtn.addEventListener('click', filterHandler.bind(this, 'all'));
 openTaskBtn.addEventListener('click', filterHandler.bind(this, 'open'));
 doneTaskBtn.addEventListener('click', filterHandler.bind(this, 'done'));
+todoList.addEventListener('click', parseTodoHandler);

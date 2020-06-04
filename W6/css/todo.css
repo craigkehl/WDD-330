@@ -71,6 +71,11 @@ button:active {
   margin: 1rem;
 }
 
+.done {
+  text-decoration: line-through;
+  color: red;
+}
+
 #todo-section {
   display: none;
 }
@@ -79,7 +84,7 @@ button:active {
   display: block;
 }
 
-#todo-lista {
+#todo-list a {
   color: #2e1891;
 
 }
@@ -116,7 +121,10 @@ fieldset {
   display: grid;
   grid-template-columns: 2fr 6fr 1fr 2fr;
   align-items: center;
+}
 
+.todo_card .date {
+  font-size: 75%;
 }
 
 .todo_card button {
