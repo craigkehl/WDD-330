@@ -3,13 +3,11 @@
  * and if its status regarding completion
  */
  export class ToDo {
-        constructor(description, uniqueId, status = false) {      
+        constructor(description, status = false) {      
             this.Id = Date.now(),
-            this.Description = description,            
-            this.UUID = uniqueId,
+            this.Description = description, 
             this.Status = status,
             this.Created = new Date()
-
     }
 
     // get Id() {

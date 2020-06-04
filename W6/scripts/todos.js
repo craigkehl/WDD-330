@@ -27,20 +27,27 @@ function newTaskHandler() {
     alert("You must enter a name or describe your task to add it."); 
     return;
   }
-  newTodo(newDesc.value, );
+  newTodo(newDesc.value, ); // Question - Do I need another comma for the date created?
   writeStor();
   newDesc.value = '';
   drawTaskList();
 }
 
+function isEmpty(val){
+  return (val === undefined || val == null || val.length <= 0) ? true : false;
+}
+
 function newTodo( descripton ) {
   // const newTodo = new ToDo(descripton, create_UUID());
-  const newTodo = new ToDo(descripton,'');
+  const newTodo = new ToDo(descripton);
   todosArr.push(newTodo);
 }
 
-function isEmpty(val){
-  return (val === undefined || val == null || val.length <= 0) ? true : false;
+/** Get local storage working */
+function writeStor(){
+  if (window.localStorage) {
+    localStorage.todos = JSON.stringify(todosArr);
+  }
 }
 
 function drawTaskList() {
@@ -63,8 +70,9 @@ function drawTaskList() {
     todo => {       
       todoList.innerHTML +=  
       `<div class="todo_card">
+        <span>${showDate(todo.Created)}</span>
         <span>${todo.Description}</span>
-        <input id='c-${todo.Id}' type="checkbox" value=${todo.Status}" onclick="statusChange(${todo})">
+        <input id='c-${todo.Id}' type="checkbox" value=${todo.Status} onclick="statusChange(${todo})">
         <button id='d-${todo.Id}'><img src="./images/del_icon.png" alt="delete"></button>
       </div>`;       
       // todoList.innerHTML += 
@@ -83,13 +91,6 @@ function drawTaskList() {
 function showDate(timestamp) { 
   const months = ["JAN", "FEB", "MAR","APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
   return timestamp.getDate() + " " + months[timestamp.getMonth()] + ",</br>" + timestamp.getFullYear();
-}
-
-/** Get local storage working */
-function writeStor(){
-  if (window.localStorage) {
-    localStorage.todos = JSON.stringify(todosArr);
-  }
 }
 
 function readStor(){
@@ -145,16 +146,6 @@ function statusChange(obj) {
 //   }
 // }
 
-
-function create_UUID(){
-  var dt = new Date().getTime();
-  var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-      var r = (dt + Math.random()*16)%16 | 0;
-      dt = Math.floor(dt/16);
-      return (c=='x' ? r :(r&0x3|0x8)).toString(16);
-  });
-  return uuid;
-}
 
 newTaskBtn.addEventListener('click', newTaskHandler);
 allTaskBtn.addEventListener('click', filterHandler.bind(this, 'all'));
