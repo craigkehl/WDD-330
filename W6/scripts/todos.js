@@ -22,10 +22,15 @@ let todosArr = [];
 let filterArr = [false];
 
 // Launch program
-lauchProg(drawTaskList);
+// lauchProg(drawTaskList);
 
 function lauchProg(_callback) {
   if (readStor('todos')) { todosArr = readStor('todos')}
+  console.log(todosArr);
+  todosArr.forEach(todo => {
+    const dateStr = new Date(todo.Create);
+    todo.Create = dateObj; 
+  })
   _callback();
 }
 
