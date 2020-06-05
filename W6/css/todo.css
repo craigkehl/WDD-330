@@ -84,8 +84,9 @@ button:active {
   display: block;
 }
 
-#todo-list a {
-  color: #2e1891;
+#todo-list {
+  max-height: 40vh;
+  overflow: scroll;
 
 }
 
@@ -93,7 +94,7 @@ button:active {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: .5rem 1rem .75rem 1rem;
+  padding: 0 1rem .25rem 1rem;
 }
 
 .singleLine img {
