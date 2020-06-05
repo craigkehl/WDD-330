@@ -1,25 +1,31 @@
 'use strict';
 class Hike {
   constructor(name, imgSrc, imgAlt, distance, difficulty, descrip, directions) {
-    this.hikename = name;
-    this.imgSrc = imgSrc;
-    this.imgAlt = imgAlt;
-    this.distance = distance;
-    this.difficulty = difficulty;
-    this.description = descrip;
-    this.directions = directions;
+    this._hikeName = name;
+    this._imgSrc = imgSrc;
+    this._imgAlt = imgAlt;
+    this._distance = distance;
+    this._difficulty = difficulty;
+    this._description = descrip;
+    this._directions = directions;
   }
+
   get hikename() {
     return this._hikename;
   }
   
+  set hikename(value) {
+    this._imgSrc = value;
+  }
+
   get imgSrc() {
     return this._imgSrc;
   }
 
-  set imgSrc(value) {
+  set imgSrc() {
     this._imgSrc = value;
   }
+ 
 
   get imgAlt() {
     return this._imgAlt;

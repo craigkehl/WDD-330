@@ -21,18 +21,7 @@ const newDesc = document.getElementById('newTodoInput');
 let todosArr = [];
 let filterArr = [false];
 
-// Launch program
-// lauchProg(drawTaskList);
-
-function lauchProg(_callback) {
-  if (readStor('todos')) { todosArr = readStor('todos')}
-  console.log(todosArr);
-  todosArr.forEach(todo => {
-    const dateStr = new Date(todo.Create);
-    todo.Create = dateObj; 
-  })
-  _callback();
-}
+readStor('todos');
 
 function keyHandler() {
   if (event.keyCode === 13) {
@@ -61,7 +50,7 @@ function newTodo(descripton) {
   todosArr.push(newTodo);
 }
 
-function writeStor() {
+function writeStor(array) {
   if (window.localStorage) {
     localStorage.todos = JSON.stringify(todosArr);
   }
@@ -94,7 +83,6 @@ function drawTaskList() {
       ++count;
     });
   totalSel.textContent = count.toString();
-  console.log(count);
 }
 
 function showDate(dateObj) {
