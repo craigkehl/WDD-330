@@ -1,17 +1,15 @@
 /**Application requirements
  1. Show a list of tasks ****Done****
  2. Add a new task    ****Done****
- 3. Complete a task
- 4. Remove a task
+ 3. Complete a task ****Done****
+ 4. Remove a task    ****Done****
  5. Filter tasks (complete/incomplete)   ****Done****
  6. Store Data sources: localStorage   ****Done****
  7. Create a todo class - todo: { id : timestamp, content: string, completed: bool }  ****Done****
  8. Create an a list to contain instances - toDoList = [toDo];   ****Done****
 */
 
-import {
-  ToDo
-} from "./todo.js";
+import { ToDo } from "./todo.js";
 
 const newTaskBtn = document.getElementById("add-task-btn");
 const allTaskBtn = document.getElementById("selAll");
@@ -22,6 +20,8 @@ const newDesc = document.getElementById('newTodoInput');
 
 let todosArr = [];
 let filterArr = [false];
+
+// Launch program
 lauchProg(drawTaskList);
 
 function lauchProg(_callback) {
@@ -56,7 +56,6 @@ function newTodo(descripton) {
   todosArr.push(newTodo);
 }
 
-/** Get local storage working */
 function writeStor() {
   if (window.localStorage) {
     localStorage.todos = JSON.stringify(todosArr);
