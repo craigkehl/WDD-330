@@ -14,8 +14,14 @@
     margin: 0 auto;
   }
 
+  header {
+    position: relative;
+  }
+
   header img {
-    float: right;
+    position: absolute;
+    top: .7em;
+    right: .7em;
     box-shadow: 0 0 3px grey;
     border-radius:0 10px 0 0;
     margin: .25rem 1rem 0 0;

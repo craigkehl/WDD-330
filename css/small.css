@@ -31,7 +31,8 @@ header, footer {
 footer {
   font-size: .75rem;
   position: fixed;
-  /**left: calc(50% - 22.5rem);*/
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 0;
   width: 100%;
 }
