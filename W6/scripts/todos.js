@@ -21,7 +21,8 @@ const newDesc = document.getElementById('newTodoInput');
 let todosArr = [];
 let filterArr = [false];
 
-readStor('todos');
+todosArr = readStor('todos');
+drawTaskList();
 
 function keyHandler() {
   if (event.keyCode === 13) {
@@ -50,7 +51,7 @@ function newTodo(descripton) {
   todosArr.push(newTodo);
 }
 
-function writeStor(array) {
+function writeStor() {
   if (window.localStorage) {
     localStorage.todos = JSON.stringify(todosArr);
   }
@@ -93,7 +94,12 @@ function showDate(dateObj) {
 function readStor(file) {
   if (window.localStorage) {
     if (localStorage[file]) {
-      return JSON.parse(localStorage[file]);       
+      const tempArr = JSON.parse(localStorage[file]);
+      tempArr.forEach( key => {
+        const tempDate = new Date(key.Created);
+        key.Created = tempDate;
+      });
+      return tempArr;    
     } 
   }
 }
@@ -122,13 +128,15 @@ window.statusUpdate = function (objStatus, objId) {
     currObj.Status = !objStatus;
     const objDescClass = document.getElementById(`s-${objId}`).classList;
     currObj.Status ? objDescClass.add('done'): objDescClass.remove('done');
-    drawTaskList();
+    writeStor(todosArr);
+    setTimeout(() => { drawTaskList(); } , 500);
 }
 
 window.deleteObj = function(objId) {
   debugger
     const newArr = todosArr.filter(todo => todo.Id != objId);    
     todosArr = newArr;
+    writeStor(todosArr);
     drawTaskList();
 }
 
