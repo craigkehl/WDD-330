@@ -1,0 +1,35 @@
+{
+  "hasOverTime": true,
+  "clockCountsUp": false,
+  "periodDuration": 1500000,
+  "stopTimeCutoff": 0,
+  "numberOfPeriods": 1,
+  "stopTimePeriods": [],
+  "timeoutDuration": 40000,
+  "halfTimeDuration": 600000,
+  "numberOfTimeouts": 1,
+  "overTimeDuration": 600000,
+  "divisionOverrides": [
+    {
+      "name": "U12",
+      "passClockDuration": 6000
+    },
+    {
+      "name": "U14",
+      "passClockDuration": 5000
+    },
+    {
+      "name": "U16",
+      "passClockDuration": 5000
+    }
+  ],
+  "hasStopTimeCutoff": true,
+  "passClockDuration": 4000,
+  "playClockDuration": 40000,
+  "isRunningGameClock": false,
+  "stopTimeScoreSpread": 8,
+  "timeoutResetsBeginningOf": [
+    1,
+    2
+  ]
+}
