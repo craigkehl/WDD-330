@@ -31,8 +31,137 @@
     </ul>
   </nav>
   <main>
+    <h2>Review Asyncronis Tools</h2>
+    <section class="functions card">
+      <figure class="code-sample">
+        <figcaption>Promises - .then, resolve, reject</figcaption>
+        <pre class="default prettyprint">
+<code>const delay = seconds => {
+ return new Promise((resolve, reject) => {
+  if(typeof seconds !== 'number') {
+	 reject(new Error('Argument seconds must be a number')); 
+	}
+	setTimeout(
+	 () => resolve(`${seconds} second delay is up`),
+	 seconds * 1000
+	 );
+	});
+};
+
+function example1() {
+  w11PromExp1_div.textContent ="zero seconds";
+  delay('10 minutes').then(msg => msg.toUpperCase())
+          .then(msg => `${msg}!!!!!`)
+          .then(msg => w11PromExp1_div.textContent =msg);
+  delay(2).then(msg => msg.toUpperCase())
+          .then(msg => `${msg}!!!!!`)
+          .then(msg => w11PromExp1_div.textContent =msg);
+}</code></pre>
+      </figure>
+        <h5 class="advantage">Advantages:</h5>
+        <ul>
+          <li>Simple to construct</li>
+          <li>.then statements can be easily daisy-chained</li>
+          <li>Resolve & Reject allows simple error handling</li>
+        </ul>  
+        
+      <h2>Promises Code Example</h1>
+      <button id="w11__promise__exp-1__btn">Run</button>
+      <div class="code__example" id="promise__exp-1"></div>
+      <p><a href="https://www.linkedin.com/learning/learning-ecmascript-6/building-promises" class="citation">Adapted from "Learning ECMAScript 6" by Eve Porcello</a></p>
+    </section>
+    
+    <section class="functions card">
+      <figure class="code-sample">
+        <figcaption>Promises - XMLHttp Request</figcaption>
+        <p>This code sets up the request and the parameters for resolution or rejection of the response.</p>
+        <pre class="default prettyprint">
+<code>const spacePeople = () => {
+  return new Promise((resolves, rejects) => {
+    const api = 'http://api.open-notify.org/astros.json';
+    const request = new XMLHttpRequest();
+    request.open('GET', api);
+    request.onload = () => {
+      if(request.status === 200) {
+        resolves(JSON.parse(request.response));
+      } else {
+        rejects(Error(request.statusText));
+      }
+    };
+    request.onerror = err => rejects(err);
+    request.send();
+  });
+};</code></pre>
+<p>This part of the code calls the function and uses .then to wait for the resolution or rejection with callbacks assigned to handle either.</p>
+<pre class="default prettyprint">
+<code>function trigger() {
+  spacePeople().then(
+    spaceData => showData(spaceData),
+    err => console.error(
+        new Error('Cannot load space people')
+    )
+  );
+}</code></pre>
+<p>This last part of the code separates and displays the data.</p>
+<pre class="default prettyprint">
+<code>function showData(spaceData) {
+  if(spaceData.number > 0) {
+    example2Dis.innerHTML = `<h3>There are ${spaceData.number} people in space right now.</h3>
+    <ol>`;
+    spaceData.people.forEach( p => {
+      example2Dis.innerHTML += `<li>${p.name} is on the ${p.craft}</li>`;
+    });
+    example2Dis.innerHTML += "</ol>"
+  } else {
+    example2Dis.innerHTML = "<h3>No one is listed as being in space right now.<h3>"
+  }
+}</code></pre>
+
+      </figure>
+        <h5 class="advantage">Advantages:</h5>
+        <ul>
+          <li>.then can be added on the initial call and wait until the response is received</li>
+          <li>Again, resolve & reject initiate the appropriate courses of action</li>
+        </ul>  
+        
+      <h2>Promises - Example #2</h1>
+        <h3>Are there people in space right now?</h3>
+        <button id="example2Btn">Let's see</button>
+        <div id="example2Display"></div>
+      <p><a href="https://www.linkedin.com/learning/learning-ecmascript-6/building-promises" class="citation">Adapted from "Learning ECMAScript 6" by Eve Porcello</a></p>
+    </section>
+
+    <section class="functions card">
+      <figure class="code-sample">
+        <figcaption>Asycronis and Await Combined with Fetch</figcaption>
+        <p>The addition of the Async keyword not only allows us to specify a named function as an asycronis function but also an anonymus functions. The await keyword allows us to specify which subsequent actions need to wait for the previous asycronis action to complete. Fetch provide an extremely simplified structure to manage requests.</p>
+        <pre class="default prettyprint">
+<code>(async(loginName) => {
+  try {
+    var response = await fetch(`https://api.github.com/users/${loginName}/followers`);
+    var json = await response.json();
+    var followerList = json.map(user => user.login);
+    namesList.textContent = followerList.join(', ');
+  } catch(e) {
+      console.log("Data didn't load", e);
+  }
+})('craigkehl');</code></pre>
+      </figure>
+        <h5 class="advantage">Advantages:</h5>
+        <ul>
+          <li>Async provides for the flexibility to easily designate any function as asyncronis.</li>
+          <li>The placement of the Await keyword makes code easier to read</li>
+          <li>It again increases flexibility</li>
+          <li>Fetch is a power built in function with methods to simplify </li>
+        </ul>  
+        
+      <h2>Async, Await and Fetch - Example #3</h1>
+        <h3>Some of Github's follower's user-names</h3>
+        <div id="example3"></div>
+      <p><a href="https://www.linkedin.com/learning/learning-ecmascript-6/async-with-fetch" class="citation">Adapted from "Learning ECMAScript 6" by Eve Porcello</a></p>
+    </section>
     <section>
-      <h2>Questions from the readings</h2>
+      <h2><a href="./W11/W11Team.html">Link to my todo Project</a></h2>
     </section>  
   </main>
   <footer>
@@ -45,6 +174,10 @@
   <script src="/js/main.js" language="Javascript"></script>
   <script src="js/hamburger_menu.js" language="Javascript"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+  <script src="./W11/example1.js" language="Javascript"></script>
+  <script src="./W11/example2.js" language="Javascript"></script>  
+  <script src="./W11/example3.js" language="Javascript"></script>
   <script>WebFont.load({google: {families: ['PT+Serif', 'Roboto']}});</script>
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>
 </body>
 </html>

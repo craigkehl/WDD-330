@@ -39,10 +39,11 @@
           <section class="functions card">
             <dt>Standard Function</dt>
               <dd>
-                <code>function var_name(pram1, pram2, ...pram) {</code>
-                <pre><code>   z = a + b;</code></pre>
-                <pre><code>   return z;</code></pre>
-                <pre><code>}</code></pre>
+                <pre class="prettyprint">
+<code>function var_name(pram1, pram2, ...pram) {
+  z = a + b;
+  return z;
+}</code></pre>
               </dd>
             <h5 class="advantage">Advantages:</h5>
             <ul>
@@ -52,7 +53,7 @@
           <section class="functions card">
             <dt>Function Expression</dt>
               <dd>
-                <pre><code>const n = function(p1, ...pn) 
+                <pre class="prettyprint"><code>const n = function(pram1, ...pramn) 
                   { return z}</code></pre>
             </dd>
             <h5 class="advantage">Advantages:</h5>
@@ -67,10 +68,11 @@
           <section class="functions card">
             <dt>Fat Arrow Function - Standard</dt>
               <dd>
-                <code>const add = (a, b) => {</code>
-                <pre><code>  const result = a + b;</code></pre>
-                <pre><code>  return result;</code></pre>
-                <pre><code>};</code></pre>
+                <pre class="prettyprint">
+<code>const add = (a, b) => {</code>
+<code>  const result = a + b;</code>
+<code>  return result;</code>
+<code>};</code></pre>
               </dd>
             <h5 class="advantage">Advantages:</h5>
             <ul>
@@ -82,9 +84,10 @@
           <section class="functions card">
             <dt>Fat Arrow Function - shorter with one param</dt>
               <dd>
-                <code>const log = message => {</code>
-                <pre><code>  console.log(message);</code></pre>
-                <pre><code>};</code></pre>
+                <pre class="prettyprint">
+<code>const log = message => {</code>
+<code>  console.log(message);</code>
+<code>};</code></pre>
               </dd>
             <h5 class="advantage">Advantages:</h5>
             <ul>
@@ -94,7 +97,8 @@
           <section class="functions card">
             <dt>Fat Arrow Function - one expression</dt>
               <dd>
-                <code>const add = (a, b) => a + b;</code>
+                <pre class="prettyprint">
+<code>const add = (a, b) => a + b;</code></pre>
               </dd>
               <h5 class="advantage">Advantages:</h5>
               <ul>
@@ -103,14 +107,16 @@
               </ul>
           </section>
         </dl>
-        <li>Callback functions</li>
-        <li>Bind() method</li>
-        <li>The Rest Parameter</li>
-        <li>Traversing the Dom</li>
-        <li>Iterables vs. "Array-Like" Objects</li>        
-      </ol>
-    </section>  
-    <section>
+          <section class="card">            
+            <li>Callback functions</li>
+            <li>Bind() method</li>
+            <li>The Rest Parameter</li>
+            <li>Traversing the Dom</li>
+            <li>Iterables vs. "Array-Like" Objects</li>
+          </section>          
+    </section>        
+    </ol>  
+    <section class="card">
       <h2>Thoughts from the readings</h2>
       <p>The material in "JavaScript: Novice to Ninja, 2nd Edition seemed way too simple as I began this week.  The code I have written to this point has seemed far more advanced than the material covered.</p>
       <p>See the following projects and their code:</p>
@@ -130,7 +136,7 @@
           </ul>
       </ul>
     </section>  
-    <section class="team">
+    <section class="team card">
       <h2>Team Project</h2>
       
       <p>Sum of all numbers between 1 and n</p>                          
@@ -144,7 +150,7 @@
       <button id="btnAdd" type="button" onclick="calculateTotal()">Calc</button>
       <div id="dvTotal"></div>
     </section>
-    <section class="team">
+    <section class="team card">
       <h2>Strecht Goals</h2>
       
   <div>
@@ -218,5 +224,6 @@
         document.getElementById("dvTotal").innerHTML = results;
     }
 </script>
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>
 </body>
 </html>
