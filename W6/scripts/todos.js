@@ -18,6 +18,10 @@ const doneTaskBtn = document.getElementById('selDone');
 const todoList = document.getElementById('todo-list');
 const newDesc = document.getElementById('newTodoInput');
 
+// Get a reference to the database service
+// var db = firebase.database();
+// var ref = db.ref("todo");
+
 let todosArr = [];
 let filterArr = [false];
 
@@ -52,9 +56,8 @@ function newTodo(descripton) {
 }
 
 function writeStor() {
-  if (window.localStorage) {
-    localStorage.todos = JSON.stringify(todosArr);
-  }
+  
+  docRef.set(JSON.stringify(todosArr));
 }
 
 function drawTaskList() {
