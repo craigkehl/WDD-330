@@ -7,10 +7,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
   <link rel="stylesheet" href="/css/small.css">
   <link rel="stylesheet" href="/css/medium.css">
+  <link rel="stylesheet" href="w9/drum_kit.css">
 </head>
 <body>
   <header>
-    <h1>Week 9 notes</h1>
+    <h1>Week 9 JavaScript Project</h1>
   </header>   
   <nav>
     <ul class="navigation">
@@ -24,7 +25,7 @@
       <li><a href="w6.html">Week 06: </a></li>
       <li><a href="w7.html">Week 07: </a></li>
       <li><a href="w8.html">Week 08: </a></li>
-      <li><a href="w9.html" class="active">Week 09: </a></li>
+      <li><a href="w9.html" class="active">Week 09: Drum Kit</a></li>
       <li><a href="w10.html">Week 10: </a></li>
       <li><a href="w11.html">Week 11: Node.JS</a></li> 
       <li><a href="w12.html">Week 12: </a></li>
@@ -32,6 +33,58 @@
     </ul>
   </nav>
   <main>
+    <h2>Keyboard Drum Kit</h2>
+    <section>     
+      <p>Touch the keys listed to play the indicated sound.</p>
+    <div class="keys">
+      <div data-key="65" class="key">
+        <kbd>A</kbd>
+        <span class="sound">clap</span>
+      </div>
+      <div data-key="83" class="key">
+        <kbd>S</kbd>
+        <span class="sound">hihat</span>
+      </div>
+      <div data-key="68" class="key">
+        <kbd>D</kbd>
+        <span class="sound">kick</span>
+      </div>
+      <div data-key="70" class="key">
+        <kbd>F</kbd>
+        <span class="sound">openhat</span>
+      </div>
+      <div data-key="71" class="key">
+        <kbd>G</kbd>
+        <span class="sound">boom</span>
+      </div>
+      <div data-key="72" class="key">
+        <kbd>H</kbd>
+        <span class="sound">ride</span>
+      </div>
+      <div data-key="74" class="key">
+        <kbd>J</kbd>
+        <span class="sound">snare</span>
+      </div>
+      <div data-key="75" class="key">
+        <kbd>K</kbd>
+        <span class="sound">tom</span>
+      </div>
+      <div data-key="76" class="key">
+        <kbd>L</kbd>
+        <span class="sound">tink</span>
+      </div>
+    </div>
+  
+    <audio data-key="65" src="./W9/sounds/clap.wav"></audio>
+    <audio data-key="83" src="./W9/sounds/hihat.wav"></audio>
+    <audio data-key="68" src="./W9/sounds/kick.wav"></audio>
+    <audio data-key="70" src="./W9/sounds/openhat.wav"></audio>
+    <audio data-key="71" src="./W9/sounds/boom.wav"></audio>
+    <audio data-key="72" src="./W9/sounds/ride.wav"></audio>
+    <audio data-key="74" src="./W9/sounds/snare.wav"></audio>
+    <audio data-key="75" src="./W9/sounds/tom.wav"></audio>
+    <audio data-key="76" src="./W9/sounds/tink.wav"></audio>
+    </section>
     <section>
       <h2>Questions from the readings</h2>
     </section>  
@@ -47,5 +100,6 @@
   <script src="js/hamburger_menu.js" language="Javascript"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
   <script>WebFont.load({google: {families: ['PT+Serif', 'Roboto']}});</script>
+  <script src="./w9/drum_kit.js"></script>
 </body>
 </html>
