@@ -7,8 +7,6 @@ for (var i = 0; i < mice.length; i++) {
   });
 }
 
-
-
 var cat = document.getElementById("cat");
 cat.addEventListener("dragover", function (event) {
   event.preventDefault();
