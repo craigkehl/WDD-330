@@ -3,7 +3,7 @@
           box-sizing: border-box;
 }
 
-body {
+#svg_ex-1 {
   background: #88a;
   color: #fff;
   font-family: Avenir, Calibri, sans-serif;
@@ -77,4 +77,4 @@ body {
 #provinceInfo img {
   width: 100%;
 }
-/*# sourceMappingURL=1.css.map */
+/*# sourceMappingURL=svg_ex-1.css.map */

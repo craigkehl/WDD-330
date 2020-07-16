@@ -20,7 +20,7 @@ function move(e){
   console.log(e);
   // just an example
 }
-The sample code you present is somewhat contrived, but here's a rewrite that makes it work...
+//The sample code you present is somewhat contrived, but here's a rewrite that makes it work...
 
 var a = document.getElementById("alphasvg");
 a.addEventListener("load",function(){
