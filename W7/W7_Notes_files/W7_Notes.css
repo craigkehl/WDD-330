@@ -1,5 +1,3 @@
-
-
 /* Font Definitions */
 @font-face
  {font-family:Wingdings;
@@ -29,29 +27,32 @@
  {font-family:sfmono-regular;
  panose-1:0 0 0 0 0 0 0 0 0 0;}
 /* Style Definitions */
-p.MsoNormal, li.MsoNormal, div.MsoNormal
- {margin-top:0in;
- margin-right:0in;
- margin-bottom:8.0pt;
- margin-left:0in;
- line-height:107%;
- font-size:11.0pt;
- font-family:"Calibri",sans-serif;}
+p.MsoNormal, li.MsoNormal, div.MsoNormal {
+  /* margin-top:0in;
+  margin-right:0in;
+  margin-bottom:8.0pt;
+  margin-left:0in; */
+  width: 90%;
+  margin: auto;
+  line-height:107%;
+  font-size:11.0pt;
+  font-family:"Calibri",sans-serif;
+}
 a:link, span.MsoHyperlink
  {color:blue;
  text-decoration:underline;}
 a:visited, span.MsoHyperlinkFollowed
  {color:purple;
  text-decoration:underline;}
-p
- {margin-right:0in;
- margin-left:0in;
+p {
+   width: 90%;
+   margin: auto;
  font-size:12.0pt;
  font-family:"Times New Roman",serif;}
 p.msonormal0, li.msonormal0, div.msonormal0
  {mso-style-name:msonormal;
- margin-right:0in;
- margin-left:0in;
+ width: 100%;
+ margin: auto;
  font-size:12.0pt;
  font-family:"Times New Roman",serif;}
 .MsoChpDefault
@@ -59,14 +60,12 @@ p.msonormal0, li.msonormal0, div.msonormal0
 .MsoPapDefault
  {margin-bottom:8.0pt;
  line-height:107%;}
-@page WordSection1
- {size:8.5in 11.0in;
- margin:1.0in 1.0in 1.0in 1.0in;}
-div.WordSection1
- {page:WordSection1;}
-/* List Definitions */
 ol
  {margin-bottom:0in;}
 ul
  {margin-bottom:0in;}
+ .MsoImg {
+   width: 90%;
+   margin: auto;
+ } 
 -->

@@ -37,21 +37,131 @@
     </ul>
   </nav>
   <main>
-    <h2>Web Examples/Projects</h2>
-    <p>The following are either projects or examples from web searches I studied to see how to apply this week's
-      material. <strong>SVG</strong>s are scalable vector graphics:
-      <ul>
-        <li>They maintain their quality as their size requirements change.</li>
-        <li>They can also be very light on code weight compare to a bitmap type graphic. However, depending on the
-          graphics complexity, they can also be larger and consume more processing resources.</li>
-        <li>Unlike a bitmap graphic, the elements in the SVG can be individually addressed and modified through XHML and
-          CSS.</li>
-        <li>Those elements can also have event listeners attached to them and act as triggers to execute code.</li>
-      </ul>
-    </p>
-    <section>
+    <h2>Animations and Transitions</h2>
+    <section class="card">
+      <h4>Tansition</h4>
+      <div>
+        <p>	To begin, you define start and end states attributes and amounts.
+          A transition statement animates the change of states by specifying elements like:</p>
+          <ul>
+            <li>Which attribute's state changes to apply</li> 
+            <li>Duration of the transition</li>
+            <li>Delay from the triggered change to begin</li>
+            <li>The rate and/steps</li>
+          </ul>
+          <p>Multiple attributes can be assigned. Mulitple transition statements may have different specifications to allow the elements to respond differently. The browser fills in the states in between. 
+        </p>
+    </div>
+    <h4>Animation</h4>
+    <div>
+      <p>With an animation, you can specifically define in-between states to control how the animation progresses. Animations are assigned a name and called when a class is applied or enters into a state such as <strong>:hover</strong> to trigger the animation.
+     </p>
+    </div>
+    
+    <figure class="code-sample">
+      <figcaption>Animation Example</figcaption>
+      <pre class="default prettyprint">
+<code>.container-two {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.morphing-circle {
+  height: 25%;
+  width: 25%;
+  background-color: darkred;
+  animation: morphing-circle-square 3s linear infinite;
+}
+
+
+@keyframes morphing-circle-square {
+  0% {border-radius: 50%;}
+  25% {
+    border-radius: 50%;
+    background-color: darkred;
+  }
+  50% { 
+    border-radius: 0%;
+    background-color: white;
+    transform: rotate(0deg);
+  }
+  75% {
+    border-radius: 0%;
+    background-color: white;
+    transform: rotate(90deg);
+  }
+  100% {
+    border-radius: 50%;
+    background-color: darkred;
+    transform: rotate(90deg);
+  }
+}</code></pre>
+    </figure>
+    <style>
+    .container {
+      height: 25vmin;
+      width:25vmin;
+      background-color: teal;
+    }
+
+      .container-two {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .morphing-circle {
+        height: 25%;
+        width: 25%;
+        background-color: darkred;
+        animation: morphing-circle-square 3s linear infinite;
+      }
+            
+      @keyframes morphing-circle-square {
+        0% {border-radius: 50%;}
+        25% {
+          border-radius: 50%;
+          background-color: darkred;
+        }
+        50% { 
+          border-radius: 0%;
+          background-color: white;
+          transform: rotate(0deg);
+        }
+        75% {
+          border-radius: 0%;
+          background-color: white;
+          transform: rotate(90deg);
+        }
+        100% {
+          border-radius: 50%;
+          background-color: darkred;
+          transform: rotate(90deg);
+        }
+      }
+    </style>
+    <div class="container-two">
+      <div class="morphing-circle"></div>
+    </div>
+    
+   
+    </section>
+    <section class="card">
+      <h2>Web Examples/Projects</h2>
+      <p>The following are either projects or examples from web searches I studied to see how to apply this week's
+        material. <strong>SVG</strong>s are scalable vector graphics:
+        <ul>
+          <li>They maintain their quality as their size requirements change.</li>
+          <li>They can also be very light on code weight compare to a bitmap type graphic. However, depending on the
+            graphics complexity, they can also be larger and consume more processing resources.</li>
+          <li>Unlike a bitmap graphic, the elements in the SVG can be individually addressed and modified through XHML and
+            CSS.</li>
+          <li>Those elements can also have event listeners attached to them and act as triggers to execute code.</li>
+        </ul>
+      </p>    
       <div id="svg_ex-1">
-        <h2>SVG Triggers</h2>
+        <h2>SVG Triggers - (click a providence)</h2>
         <h4>This example listens to SVGs as triggers to pull information about Canadian providences </h4>
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1386 822"
           id="canada-map">
@@ -324,7 +434,7 @@
         <div id="provinceInfo"></div>
       </div>
     </section>
-    <section>
+    <section class="card">
       <h2>Example 2 SVG Triggers</h2>
       <h4>Similar to the first example, this program also uses SVGs. Here a pattern is repeated, keeping the amount of
         code very small</h4>
@@ -565,7 +675,7 @@
         <div id="title">Chat Noir</div>
       </div>
     </section>
-    <section>
+    <section class="card">
       <h2>W8 Team Project</h2>
       <h3>The Star Wars API</h3>
       <h4>I was a little too ambitious with the team project. Before our team exercise, I thought it would be really
@@ -587,7 +697,7 @@
         <ul id="entry-list"></ul>
       </div>
     </section>
-    <section>
+    <section class="card">
       <h2>The not yet opperational Death-Star</h2>
       <h4>When finished, this Death-Star with showcase it awesome power, by expanding between the top on lower havles, to reveal information the empire knows about the Rebel Aliance scum.</h4>
     <svg id="deathstar-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1125 2436">
@@ -717,7 +827,7 @@
       }
     });
   </script>
-
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>
   <script src="./W8/js/svg_ex-1.js"></script>
   <script src="./W8/js/svg_ex-2.js"></script>
   <script src="./W8/js/swapi.js"></script>

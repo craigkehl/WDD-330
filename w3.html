@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>W3 Array Cardio 💪</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/small.css">
   <link rel="stylesheet" href="./css/medium.css">
 </head>
 <body>
   <header>
-    <h1>Week 3 notes</h1>
+    <h1>Week 3<br/>Array Cardio 💪</h1>
     <nav>
       <ul class="navigation">
         <li><a class="hamburger">&#9776; Menu</a></li>
         <li><a href="index.html">Home</a></li>        
         <li><a href="w1.html">Week 01: </a></li>
         <li><a href="w2.html">Week 02: </a></li>
-        <li><a href="w3.html" class="active">Week 03: </a></li>
+        <li><a href="w3.html" class="active">Week 03: Array Cardio 💪</a></li>
         <li><a href="w4.html">Week 04: </a></li>
         <li><a href="w5.html">Week 05: </a></li>
         <li><a href="w6.html">Week 06: </a></li>
@@ -38,12 +38,130 @@
       <p>Due to the massive amount of time it takes to prepare an HTML view, there are more notes directly in <a href="./W3/array.js">the Javascript file found here.</a></p>
     </section>
     <section class="card">
-      <h2><a href="./W3/team03.html">Team Assignment</a></h2>
-      <p> This is the code we developed as a team. It includes the sixth and seventh exercise stretch goals. The Javascript is contained in the html page.</p>
+      <h2>W3 Team Assignment</h2>
+      <p> This is the code we developed as a team. It includes the sixth and seventh exercise stretch goals. The Javascript is contained in the html page. Open the console to see each exercises results. (cntl + shift + i) </p>
+    </section>
+    <section class="functions card">
+      <h3>Exercise 1</h3>
+      <p>Filter the list of inventors for those who were born in the 1500's.</p>
+      <figure class="code-sample">
+        <pre class="default prettyprint">
+<code>console.log('Exercise 1:');
+  console.table(inventors.filter((inventor) => {
+    return (inventor.year > 1499 && inventor.year < 1600);
+  }));</code></pre>
+      </figure>
+
+      <h3>Exercise 2</h3>
+      <p>Give us an array of the inventors first and last names.</p>
+      <figure class="code-sample">
+        <pre class="default prettyprint">
+<code>console.log('Exercise 2:');
+  let invtNames = inventors.map(name => [{
+    first: name.first,
+    last: name.last,
+  }]);
+  console.table(invtNames);</code></pre>
+      </figure>
+
+      <h3>Exercise 3</h3>
+      <p>Sort the inventors by birthdate, oldest to youngest.</p>
+      <figure class="code-sample">
+        <pre class="default prettyprint">
+<code>console.log('Exercise 3:');
+  console.table(inventors.sort((a, b) => a.year > b.year ? 1 : -1));</code></pre>
+      </figure>
+
+      <h3>Exercise 4</h3>
+      <p>How many years did all the inventors live all together?</p>
+      <figure class="code-sample">
+        <pre class="default prettyprint">
+<code>console.log('Exercise 4:');
+  console.log(inventors.map(inventor => (inventor.passed - inventor.year))
+    .reduce((sumVal, curVal) => sumVal + curVal, 0));</code></pre>
+      </figure>
+
+      <h3>Exercise 5</h3>
+      <p>Sort the inventors by years lived</p>
+      <figure class="code-sample">
+        <pre class="default prettyprint">
+<code>console.table(inventors.sort((a, b) => {
+  return ((a.passed - a.year) - (b.passed - b.year))
+}));
+
+const sortedLife = inventors.sort((a, b) => {
+  a.lifespan = a.passed - a.year; // Added lifespan key:value pair
+  return ((a.passed - a.year > b.passed - b.year) ? 1 :
+    (a.passed - a.year == b.passed - b.year) ? 0 :
+    -1);
+});
+console.log('Exercise 5:');
+console.table(sortedLife);</code></pre>
+      </figure>
+
+      <h3>Exercise 6</h3>
+      <p>create a list of Boulevards in Paris that contain 'de' anywhere in the name https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris goto the link above and open the console. Paste the following two lines in.  That will create a list of links in memory that you can reference through the console. Use that list to finish the problem.</p>
+      <figure class="code-sample">
+        <pre class="default prettyprint">
+<code>const category = document.querySelector('.mw-category');
+const links = Array.from(category.querySelectorAll('a'));
+
+console.log('Exercise 6:');
+console.table( links.map(link => link.innerText).filter(name => name.indexOf('de')>= 0));</code></pre>
+      </figure>
+
+      <h3>Exercise 7</h3>
+      <p>Sort the people alphabetically by last name</p>
+      <figure class="code-sample">
+        <pre class="default prettyprint">
+<code>console.log('Exercise 7:');
+console.table([...people.map(person => person.split(', ')).sort((a, b) => (a[0] > b[0]) ? 1 : -1)]);
+  
+const copiedPeople = [...people.map(person => person.split(','))];
+const sortedPeople = copiedPeople.sort((a, b) => {
+    return ((a[0] > b[0]) ? 1 :
+      (a[0] == b[0]) ? 0 :
+      -1);
+});
+  
+console.table(sortedPeople);</code></pre>
+      </figure>
     </section>
     <section class="card">
-      <h2><a href="./W3/notes/Team/w3-team.html">Team Assignment - Personal</a></h2>
-      <p> This is the code I wrote alone to prepare for the team activity, plus it includes the eighth stretch goal.</p>
+      <h2><a href="./W3/notes/W3-Team_Finish.html">W3 Team Assignment - Personal coding</a></h2>
+      <p>This is the code I wrote alone to prepare for the team activity, plus it includes the eighth stretch goal. I don't want the code to conflict with the code just shown. This <a href="./W3/notes/W3-Team_Finish.html">link</a> will take you to a different page. Stretch goal # 8 is shown hear. For the rest, open the link inspect the page and the console to see the differences.</p>
+
+      <h3>Exercise 8</h3>
+      <p>Sum up the instances of each of these</p>
+      <figure class="code-sample">
+        <pre class="default prettyprint">
+<code>const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+
+const uniqueSet = data.filter( onlyUnique );
+const instanceCnt = occurCnt(uniqueSet, data);
+console.log('Exercise 8');
+console.table(instanceCnt);
+  
+// create an array of destinct strings
+function onlyUnique(value, index, self) { 
+  return self.indexOf(value) === index;
+}
+  
+// Count the number of matches from the unique array to the data array.
+function occurCnt(arr1, arr2) {
+  let newObj = {};
+  arr1.forEach((strVal) => {
+    let cnt = 0;
+    arr2.forEach(strVal2 => {
+      if (strVal.localeCompare(strVal2) == 0) {
+        ++cnt;
+      }
+    });
+    newObj[strVal] = cnt;
+  });      
+  return newObj;
+}</code></pre>
+      </figure>
     </section>
     <section class="card">
       <h2>Scratch Javascript</h2>
@@ -64,5 +182,7 @@
   <script src="./js/hamburger_menu.js" language="Javascript"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
   <script>WebFont.load({google: {families: ['PT+Serif', 'Roboto']}});</script>
+  <script src="./W3/js/W3_team.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>
 </body>
 </html>
