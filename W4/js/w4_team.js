@@ -126,7 +126,7 @@ function clearBoard(className) {
   clearClass.forEach( cell => cell.classList.remove(className));
 }
 
-/************  ?????????????????????? ************/
+/************  ? ************/
 
 
 // function gameState(scoreArr) {

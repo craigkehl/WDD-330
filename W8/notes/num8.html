@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    
+div#topLinks {  
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  color: white;
+  display: -webkit-flex;
+  background: transparent;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;  
+  -webkit-flex: 1 1 441px;
+  flex: 1 1 441px;
+}
+
+div#topLinks ul#tranUl {
+  list-style: none;
+  list-style-image: none;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+div#topLinks > ul#tranUl > li {
+  -webkit-flex: 0 1 auto;
+  flex: 0 1 auto;
+  font-size: 1.2em; 
+  line-height: 2.3em; 
+  height: 2.3em;
+  padding: 0px 10px;
+}
+
+div#topLinks > ul#tranUl > li > a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  width: 100%;
+}
+
+/* Transition Styles */
+
+div#topLinks a {
+   position: relative;	
+   color: rgb(224,207,191);
+   font-size: 1.5em;	
+   top: 0px;
+   left: 0px;
+   text-shadow: rgba(0, 0, 0, 1) -1px -1px 1px;	
+   transition: all 1.2s;             
+}
+
+div#topLinks a:hover { 
+   color: rgb(92,75,57);
+   font-size: 2.4em;
+   top: -30px;
+   left: 12px;
+   text-shadow: rgba(0, 0, 0, 0.35) 10px 10px 5px;    
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="horizontal" id="topLinks">
+    <ul id="tranUl">
+       <li class="tranLi"><a href="#">gallery</a></li>
+       <li class="tranLi"><a href="#">history</a></li>
+       <li class="tranLi"><a href="#">artists</a></li>
+       <li class="tranLi"><a href="#">articles</a></li>
+       <li class="tranLi"><a href="#">shop</a></li>
+    </ul>
+  </div>
+  
+</body>
+</html>

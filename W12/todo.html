@@ -3,33 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Week 6</title>
+  <title>My ToDo App</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/small.css">
-  <link rel="stylesheet" href="./css/medium.css">
-  <link rel="stylesheet" href="./W6/css/todo.css">
+  <link rel="stylesheet" href="../css/small.css">
+  <link rel="stylesheet" href="../css/medium.css">
+  <link rel="stylesheet" href="./css/todo.css">
+</head>
 <body>
   <header>
-    <h1>Week 6 ToDo Application</h1>  
+    <h1 class="card">My ToDos</h1>
     <nav>
       <ul class="navigation">
         <li><a class="hamburger">&#9776; Menu</a></li>
-        <li><a href="index.html">Home</a></li>     
-        <li><a href="w1.html">Week 01: Mobile UX</a></li>
-        <li><a href="w2.html">Week 02: Logic, Loops and Functions</a></li>
-        <li><a href="w3.html">Week 03: Array Cardio 💪</a></li>
-        <li><a href="w4.html">Week 04: Objects, Array-like Features, Modern Structers </a></li>
-        <li><a href="w5.html">Week 05: Testing, Debbuging, </a></li>
-        <li><a href="w6.html" class="active">Week 06: ToDo Project</a></li>
-        <li><a href="w7.html">Week 07: Advanced Functions & AJAX</a></li>
-        <li><a href="w8.html">Week 08: Transforms, Transitions, Graphics</a></li>
-        <li><a href="w9.html">Week 09: Window Obj, API, Modern Front End</a></li>
-        <li><a href="w10.html">Week 10: Form Vaidation & Fetch</a></li>
-        <li><a href="w11.html">Week 11: Node.JS</a></li> 
-        <li><a href="w12.html">Week 12: Block Two Challenge</a></li>
+        <li><a href="index.html">Home</a></li>        
+        <li><a href="w1.html">Week 01: </a></li>
+        <li><a href="w2.html">Week 02: </a></li>
+        <li><a href="w3.html">Week 03: </a></li>
+        <li><a href="w4.html">Week 04: </a></li>
+        <li><a href="w5.html">Week 05: </a></li>
+        <li><a href="w6.html" class="active">Week 06: </a></li>
+        <li><a href="w7.html">Week 07: </a></li>
+        <li><a href="w8.html">Week 08: </a></li>
+        <li><a href="w9.html">Week 09: </a></li>
+        <li><a href="w10.html">Week 10: </a></li>
+        <li><a href="w11.html">Week 11: </a></li> 
+        <li><a href="w12.html">Week 12: </a></li>
       </ul>
     </nav>
-  </header>   
+  </header> 
   <main>
     <section id="user-input" class="card">
       <div class="control">
@@ -72,7 +73,6 @@
     <br/>
     
   </main>
-</body>
   <footer>
     <p>
       &copy;2020 | Craig H. Kehl | Utah |
@@ -80,10 +80,20 @@
       <span id="lastMod"></span>
     </p>      
   </footer>
-  <script src="/js/main.js" language="Javascript"></script>
-  <script src="js/hamburger_menu.js" language="Javascript"></script>
+  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+  <!-- Add Firebase products that you want to use -->
+  <!-- <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script> -->
+  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>  
+  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+
+  <script src="./scripts/firebase.js"></script>
+  <script src="./scripts/todos.js" type="module"></script>
+  <script src="../js/main.js" language="Javascript"></script>
+  <script src="../js/hamburger_menu.js" language="Javascript"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
   <script>WebFont.load({google: {families: ['PT+Serif', 'Roboto']}});</script>
-  <script src="./W6/scripts/todos.js" type="module"></script>
 </body>
+
 </html>

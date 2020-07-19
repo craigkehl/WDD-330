@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,45 +8,473 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/small.css">
   <link rel="stylesheet" href="./css/medium.css">
+  <link rel="stylesheet" type='text/css' href='./W4/style/w4_team.css'>
+  <link rel="stylesheet" type="text/css" href="../W4/style/W4_office.css">
 </head>
+
 <body>
   <header>
-    <h1>Week 4 notes</h1>   
+    <h1>Week 4 notes</h1>
     <nav>
       <ul class="navigation">
         <li><a class="hamburger">&#9776; Menu</a></li>
-        <li><a href="index.html">Home</a></li>        
-        <li><a href="w1.html">Week 01: </a></li>
-        <li><a href="w2.html">Week 02: </a></li>
-        <li><a href="w3.html">Week 03: </a></li>
-        <li><a href="w4.html" class="active">Week 04: </a></li>
-        <li><a href="w5.html">Week 05: </a></li>
-        <li><a href="w6.html">Week 06: </a></li>
-        <li><a href="w7.html">Week 07: </a></li>
-        <li><a href="w8.html">Week 08: </a></li>
-        <li><a href="w9.html">Week 09: </a></li>
-        <li><a href="w10.html">Week 10: </a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="w1.html">Week 01: Mobile UX</a></li>
+        <li><a href="w2.html">Week 02: Logic, Loops and Functions</a></li>
+        <li><a href="w3.html">Week 03: Array Cardio 💪</a></li>
+        <li><a href="w4.html" class="active">Week 04: Objects, Array-like Features, Modern Structers </a></li>
+        <li><a href="w5.html">Week 05: Testing, Debbuging, </a></li>
+        <li><a href="w6.html">Week 06: ToDo Project</a></li>
+        <li><a href="w7.html">Week 07: Advanced Functions & AJAX</a></li>
+        <li><a href="w8.html">Week 08: Transforms, Transitions, Graphics</a></li>
+        <li><a href="w9.html">Week 09: Window Obj, API, Modern Front End</a></li>
+        <li><a href="w10.html">Week 10: Form Vaidation & Fetch</a></li>
         <li><a href="w11.html">Week 11: Node.JS</a></li> 
-        <li><a href="w12.html">Week 12: </a></li>
-        <li><a href="../block_2_proj/todo.html">Block Two Challenge Project</a></li>
+        <li><a href="w12.html">Week 12: Block Two Challenge</a></li>
       </ul>
     </nav>
   </header>
   <main>
-    <section>
-      <h2>Questions from the readings</h2>
-    </section>  
+    <h2>W4 Objects, Array-like Features, Modern Structers and the Libraries to Make it all Easier</h2>
+    <h4>Whew!!! Let's get started</h4>
+    <section class="card">
+      <h3>A Closer Look At Strings</h3>
+      <p>If Strings are really Array-like structures, but not really Arrays, what are they? They are objects. "Strings
+        are useful for holding data that can be represented in text form. Some of the most-used operations on strings
+        are to check their length, to build and concatenate them using the + and += string operators, checking for the
+        existence or location of substrings with the indexOf() method, or extracting substrings with the substring()
+        method." <a
+          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">(MDN).</a> They
+        don't have all the methods of <a
+          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"></a>Arrays.</a>
+      </p>
+      <h4>Return the primitive value of a string object:</h4>
+
+
+      <figure class="code-sample">
+        <pre class="default prettyprint">
+<code>var str = "Hello World!";
+  var res = str.valueOf();</code></pre>
+      </figure>
+
+      <p>From <a
+          href="https://www.w3schools.com/jsref/jsref_valueof_string.asp">https://www.w3schools.com/jsref/jsref_valueof_string.asp</a>
+      </p>
+    </section>
+    <section class="card">
+      <h3>filter()</h3>
+      <p>The filter() method creates a new array with all elements that pass the test implemented by the provided
+        function.</p>
+      <figure class="code-sample">
+        <pre class="default prettyprint">
+<code>const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+const result = words.filter(word => word.length > 6);        
+console.log(result);
+// expected output: Array ["exuberant", "destruction", "present"]</code></pre>
+      </figure>
+
+      <p>From <a
+          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter</a>
+      </p>
+
+    </section>
+    <section class="card">
+      <h3>foreach()</h3>
+      <p>The forEach() method executes a provided function once for each array element.</p>
+      <figure class="code-sample">
+        <pre class="default prettyprint">
+<code>const array1 = ['a', 'b', 'c'];
+
+  array1.forEach(element => console.log(element));
+  
+  // expected output: "a"
+  // expected output: "b"
+  // expected output: "c"</code></pre>
+      </figure>
+
+      <p>From <a
+          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach</a>
+      </p>
+    </section>
+    <section class="card">
+      <h3>Key-Value Arrays</h3>
+      <p>We have given two arrays containing keys and values and the task is to store it as a single entity in the form
+        key => value in JavaScript. In JavaScript, the array is a single variable that is used to store different
+        elements. It is usually used once we need to store a list of parts and access them by one variable. We can store
+        key => value array in JavaScript Object using methods discussed below:</p>
+      <h4>Method 1: </h4>
+      <p>In this method we will use Object to store key => value in JavaScript. Objects, in JavaScript, is the most
+        important data-type and forms the building blocks for modern JavaScript. These objects are quite different from
+        JavaScript’s primitive data-types(Number, String, Boolean, null, undefined and symbol). Objects are more complex
+        and each object may contain any combination of these primitive data-types as well as reference data-types.</p>
+      <figure class="code-sample">
+        <pre class="default prettyprint">
+<code>for(var i = 0; i < keys.length; i++){
+  // obj = Object
+  // keys = key array
+  // values = value array
+  obj[keys[i]] = values[i];
+}</code></pre>
+      </figure>
+      <h3>map()</h3>
+      <h4>Method 2: </h4>
+      <p>In this method we will use Map to store key => value in JavaScript. The map is a collection of elements where
+        each element is stored as a key, value pair. Map objects can hold both objects and primitive values as either
+        key or value. When we iterate over the map object it returns the key, value pair in the same order as inserted.
+      </p>
+      <figure class="code-sample">
+        <pre class="default prettyprint">
+<code>// An array of keys 
+var keys = [5, 2, 3, 6, 10]; 
+	
+// An array of values 
+var values = ["Geeks", "for", "Geeks", "Course", "Algorithm"]; 
+	
+// Map created 
+var map = new Map(); 
+	
+// Using loop to insert key 
+// value in map 
+for(var i = 0; i < keys.length; i++){ 
+  map.set(keys[i], values[i]); 
+} 
+	
+// Printing 
+for (var key of map.keys()) { 
+  document.write(key + " => " + map.get(key) + "</br>") 
+}</code></pre>
+      </figure>
+      <p>From <a
+          href="https://www.geeksforgeeks.org/how-to-store-a-key-value-array-in-javascript">https://www.geeksforgeeks.org/how-to-store-a-key-value-array-in-javascript</a>
+      </p>
+    </section>
+    <section class="card">
+      <h3>Transforming objects</h3>
+      <p>Objects lack many methods that exist for arrays, e.g. map, filter and others.
+        If we’d like to apply them, then we can use Object.entries followed Object.fromEntries:</p>
+      <ol>
+        <li>Use Object.entries(obj) to get an array of key/value pairs from obj.</li>
+        <li>Use array methods on that array, e.g. map.</li>
+        <li>Use Object.fromEntries(array) on the resulting array to turn it back into an object.</li>
+      </ol>
+      <p>For example, we have an object with prices, and would like to double them:</p>
+      <figure class="code-sample">
+        <pre class="default prettyprint">
+<code>let prices = {
+  banana: 1,
+  orange: 2,
+  meat: 4,
+};
+let doublePrices = Object.fromEntries(
+  // convert to array, map, and then fromEntries gives back the object
+  Object.entries(prices).map(([key, value]) => [key, value * 2])
+);
+alert(doublePrices.meat);</code></pre>
+      </figure>
+
+      <p>From <a href="https://javascript.info/keys-values-entries">https://javascript.info/keys-values-entries</a></p>
+    </section>
+    <section class="card">
+      <h3>JavaScript Array keys() Method</h3>
+      <p>Example- Create an Array Iterator object, only containing the keys of the array, and then loop through each
+        key:</p>
+      <figure class="code-sample">
+        <pre class="default prettyprint">
+<code>var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var fk = fruits.keys();
+  
+for (x of fk) {
+  document.getElementById("demo").innerHTML += x + "<br>";</code></pre>
+      </figure>
+
+      <p>From <a
+          href="https://www.w3schools.com/jsref/jsref_keys.asp">https://www.w3schools.com/jsref/jsref_keys.asp</a></p>
+    </section>
+    <section class="card">
+      <h3>entries(test)</h3>
+      <p>If you can use ES6 natively or with Babel (js compiler) then you could do the following:</p>
+      <figure class="code-sample">
+        <pre class="default prettyprint">
+<code>const test = {a: 1, b: 2, c: 3};
+  for (const [key, value] of Object.entries(test)) {
+    console.log(key, value);
+  }</code></pre>
+      </figure>
+
+      <p>From <a
+          href="https://stackoverflow.com/questions/7241878/for-in-loops-in-javascript-key-value-pairs">https://stackoverflow.com/questions/7241878/for-in-loops-in-javascript-key-value-pairs</a>
+      </p>
+    </section>
+    <section class="card">
+      <p>If we had the following array defined in Javascript:</p>
+      <figure class="code-sample">
+        <pre class="default prettyprint">
+<code>var items = {
+  "foo" : 123456,
+  "bar" : 789012,
+  "baz" : 345678,
+  "bat" : 901234
+};</code></pre>
+      </figure>
+      <p>we could loop through the array and display the index and then the value like so:</p>
+      <figure class="code-sample">
+        <pre class="default prettyprint">
+<code>for(var index in items) {
+    document.write( index + " : " + items[index] + "<br />");
+}</code></pre>
+      </figure>
+
+      <p>From <a
+          href="https://electrictoolbox.com/loop-key-value-pairs-associative-array-javascript">https://electrictoolbox.com/loop-key-value-pairs-associative-array-javascript</a>
+      </p>
+    </section>
+    <section class="card">
+      <h3>JAVASCRIPT & JQUERY</h3>
+      <p>Keep this for reference how to quickly loop through an objects keys and values, if needed.</p>
+      <h4>Show objects</h4>>
+      <figure class="code-sample">
+        <pre class="default prettyprint">
+<code>function showObject(obj) {
+  var result = "";
+  for (var p in obj) {
+    if( obj.hasOwnProperty(p) ) {
+      result += p + " , " + obj[p] + "\n";
+    } 
+  }              
+  return result;
+}</code></pre>
+      </figure>
+
+      <h3>.each</h3>
+      <p>I also included an implementation using jQuery .each</p>
+      <p>Note the limitations of using a for...in loop, as it iterates over the properties of an object in an arbitrary
+        order, and needs to use .hasOwnProperty, unless inherited properties want to be shown. <b>Show objects with
+          .each</b></p>
+      <figure class="code-sample">
+        <pre class="default prettyprint">
+<code>function showObjectjQuery(obj) {
+  var result = "";
+  $.each(obj, function(k, v) {
+    result += k + " , " + v + "\n";
+  });
+  return result;
+}</code></pre>
+      </figure>
+      <p>From <a
+          href="https://coderwall.com/p/_kakfa/javascript-iterate-through-object-keys-and-values">https://coderwall.com/p/_kakfa/javascript-iterate-through-object-keys-and-values</a>
+      </p>
+
+
+      <h3>_.forEach and $.each differences</h3>
+      <p>Aside from native (_.forEach) and JQuery library ($.each), there are some other differences.</p>
+      <p>_.forEach and $.each differs for the arguments passed to the callback. If you use _.forEach, the first argument
+        passed to the callback is the value, not the key. So if you don't bother at all about the key you should use
+        _.forEach.</p>
+      <h5>Other differences:</h5>
+      <p>_.forEach it will be a bit faster as it uses the native Arrray.prototype.forEach in modern browsers.
+        the this value is also different. jQuery's behavior doesn't follow the standard, underscore's does.</p>
+      <p>From <a
+          href="https://stackoverflow.com/questions/13824221/the-difference-between-foreach-and-each#13824239">https://stackoverflow.com/questions/13824221/the-difference-between-foreach-and-each#13824239</a>
+      </p>
+    </section>
+    <section class="card">
+      <h3>Array.isArray()</h3>
+      <p>The Array.isArray() method determines whether the passed value is an Array.</p>
+      <figure class="code-sample">
+        <pre class="default prettyprint">
+  <code>Array.isArray([1, 2, 3]);  // true
+    Array.isArray({foo: 123}); // false
+    Array.isArray('foobar');   // false
+    Array.isArray(undefined);  // false</code></pre>
+      </figure>
+
+      <p>From <a
+          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray</a>
+      </p>
+    </section>
+    <section class="card">
+       <h3>Script to set the size of array to zero</h3>
+      <figure class="code-sample">
+        <pre class="default prettyprint">
+<code>var GFG_Array = [1, 2, 3, 4, 5]; 
+        var up = document.getElementById("up"); 
+        up.innerHTML = GFG_Array; 
+        var down = document.getElementById("down"); 
+        down.innerHTML = "length of GFG_Array = " + GFG_Array.length; 
+                    
+        function empty() { 
+            GFG_Array.length = 0; 
+            down = document.getElementById("down"); 
+            down.innerHTML = "length of GFG_Array = " 
+                    + GFG_Array.length; 
+          }</code></pre>
+      </figure>
+
+      <p>From <a
+          href="https://www.geeksforgeeks.org/how-to-empty-an-array-in-javascript/">https://www.geeksforgeeks.org/how-to-empty-an-array-in-javascript/</a>
+      </p>
+    </section>
+    <section class="card">
+      <h3>Accessing style sheets</h3>
+      <p>The browser provides an interface to interact with style sheets. In your JavaScript code you can access a list
+        of your style sheets by using <a
+          href="https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/styleSheets">document.styleSheets.</a> document.styleSheets will
+        return a list of all of the style sheets applied to a page, including external style sheets referenced with
+        a link element and internal style sheets residing inside style elements. If your style elements
+        have id attributes, you can reference them quickly with document.getElementById(element_id).</p>
+      <p>You can also add new style sheets to the page — you can use the document.createElement function to create a
+        new style element. This is useful when you want to give site visitors the option of changing your site styles
+        dynamically, using some button controls perhaps. Here is a quick example of how you could create a new style
+        sheet:</p>
+      <figure class="code-sample">
+        <pre class="default prettyprint">
+<code>var sheet = document.createElement('style');
+  sheet.innerHTML = "div {border: 2px solid black; background-color: blue;}";
+  document.body.appendChild(sheet);</code></pre>
+      </figure>
+
+      <p>Removing a style sheet is also very simple. First you must obtain the style sheet you wish to remove. You can
+        do this by using document.getElementById, as shown in the small example below. To remove a style sheet you can
+        use the DOM function parent.removeChild(element), where element is the style sheet object you wish to remove
+        and parent is the parent node of our style sheet. As shown in the example below, to remove the style sheet
+        (sheetToBeRemoved) you first get the style sheet's parent — var sheetParent = sheetToBeRemoved.parentNode — then
+        you call removeChild with an argument of sheetToBeRemoved - sheetParent.removeChild(sheetToBeRemoved)</p>
+      <figure class="code-sample">
+        <pre class="default prettyprint">
+<code>var sheetToBeRemoved = document.getElementById('styleSheetId');
+  var sheetParent = sheetToBeRemoved.parentNode;
+  sheetParent.removeChild(sheetToBeRemoved);</code></pre>
+      </figure>
+
+      <p>The accessing style sheets example demonstrates both accessing all styles sheets and adding and removing a new
+        style sheet to the page.</p>
+      <h3>Style Sheet Properties</h3>
+      <p>The stylesheet object is available through JavaScript, and allows you to access information about a style sheet
+        referenced from the current web page, such as if it is disabled, its location, and the list of CSS rules it
+        contains. For a full list of the properties of the stylesheet object (and many things besides), check out
+        the W3C Document Object Model Style Sheets documentation.</p>
+      <p>Let’s consider a (currently) theoretical example — say we have a website where we show a series of technical
+        articles. We want to spotlight some of these articles in a nice animated carousel, but what about users that
+        don’t have JavaScript enabled for whatever reason? Thinking back to our unobtrusive JavaScript knowledge, we
+        want the website functionality to still work for these users, but we might want to style the site differently
+        for those users so that their user experience is still pleasant, even without the carousel.</p>
+      <p>What you want is a style sheet that gets enabled only if JavaScript is enabled. You are in luck — the DOM style
+        sheet interface gives us access to the disabled attribute, which allows us to turn style sheets on or off. Most
+        of the properties of the stylesheet object are read only, but some, such as disabled, aren’t.</p>
+      <p>You can also use the style sheet properties to help differentiate between multiple style sheets on the page.
+        The src property can help you identify external style sheets, but it won’t help you to reference internal style
+        elements. A better way, which allows you to reference both internal and external style sheets individually, is
+        to use the title property. If you iterate through document.styleSheets you can differentiate between the
+        different style sheets you have included on the page. The following example shows how you can accomplish this
+        iteration:</p>
+      <figure class="code-sample">
+        <pre class="default prettyprint">
+<code>function getStyleSheet(unique_title) {
+  for(var i=0; i<document.styleSheets.length; i++) {
+    var sheet = document.styleSheets[i];
+    if(sheet.title == unique_title) {
+      return sheet;
+    }
+  }
+}</code></pre>
+      </figure>
+      From <a
+        href="https://www.w3.org/wiki/Dynamic_style_-_manipulating_CSS_with_JavaScript">https://www.w3.org/wiki/Dynamic_style_-_manipulating_CSS_with_JavaScript</a>
+    </section>
+    <section class="card">
+     <h3>Office Hour Example</h3>    
+    <table>
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>I-Number</th>          
+        </tr>
+      </thead>
+      <tbody>        
+      </tbody>
+    </table>
+    <form name="studentInput">
+      <div>
+        <label for="firstName">First Name: </label>
+        <input type="text" id="firstName" name="firstName">
+      </div>
+      <div>
+        <label for="lastName">Last Name: </label>
+        <input type="text" id="lastName" name="lastName">
+      </div>
+      <div>
+        <label for="iNumber">I-Number: </label>
+        <input type="text" id="iNumber" name="iNumber">
+      </div>
+      <div>
+        <button>Add</button>
+        <input type="reset" value="reset">
+      </div>
+    </form>
+    </section>
+    <section class="card">
+      <h3>Team Project - Tic-Tac-Toe</h3>
+      <div>
+        
+    <h1 class="curr_player"></h1>
+    <input type="button" id="reset" value="Reset">
+    <br>
+    <div class='game'>
+      <div class='game__card top_row left'>
+        <div class='game__content'></div>
+      </div>
+      <div class='game__card top_row mid'>
+        <div class='game__content'></div>
+      </div>
+      <div class='game__card top_row right'>
+        <div class='game__content'></div>
+      </div>
+      <div class='game__card mid_row left'>
+        <div class='game__content'></div>
+      </div>
+      <div class='game__card mid_row mid'>
+        <div class='game__content'></div>
+      </div>
+      <div class='game__card mid_row right'>
+        <div class='game__content'></div>
+      </div>
+      <div class='game__card bot_row left'>
+        <div class='game__content'></div>
+      </div>
+      <div class='game__card bot_row mid'>
+        <div class='game__content'></div>
+      </div>
+      <div class='game__card bot_row right'>
+        <div class='game__content'></div>
+      </div>
+    </div>
+      </div>
+    </section>
+
   </main>
   <footer>
     <p>
       &copy;2020 | Craig H. Kehl | Utah |
       <a href="https://www.byui.edu/online">BYUI Online Learning</a><br>
       <span id="lastMod"></span>
-    </p>      
+    </p>
   </footer>
   <script src="./js/main.js" language="Javascript"></script>
   <script src="./js/hamburger_menu.js" language="Javascript"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-  <script>WebFont.load({google: {families: ['PT+Serif', 'Roboto']}});</script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['PT+Serif', 'Roboto']
+      }
+    });
+  </script>
+  <script
+    src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=css&amp;skin=sunburst">
+  </script>
+  <script src="./W4/js/w4_team.js"></script>
+  <script src="./W4/js/W4_office.js" type="module"></script>
 </body>
+
 </html>

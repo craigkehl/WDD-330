@@ -18,6 +18,10 @@ const doneTaskBtn = document.getElementById('selDone');
 const todoList = document.getElementById('todo-list');
 const newDesc = document.getElementById('newTodoInput');
 
+// Get a reference to the database service
+// var db = firebase.database();
+// var ref = db.ref("todo");
+
 let todosArr = [];
 let filterArr = [false];
 
@@ -52,9 +56,8 @@ function newTodo(descripton) {
 }
 
 function writeStor() {
-  if (window.localStorage) {
-    localStorage.todos = JSON.stringify(todosArr);
-  }
+  
+  docRef.set(JSON.stringify(todosArr));
 }
 
 function drawTaskList() {
@@ -79,7 +82,7 @@ function drawTaskList() {
         <span class="date">${showDate(todo.Created)}</span>
         <span id='s-${todo.Id}' class='${todo.Status?'done':''}'>${todo.Description}</span>
         <input id='c-${todo.Id}' type="checkbox" ${todo.Status?'checked':''} onClick="statusUpdate(${todo.Status}, ${todo.Id})">
-        <button id='d-${todo.Id}'><img src="./W6/images/del_icon.png" onClick="deleteObj(${todo.Id})" alt="delete" ></button>
+        <button id='d-${todo.Id}'><img src="./images/del_icon.png" onClick="deleteObj(${todo.Id})" alt="delete" ></button>
       </div>`;
       ++count;
     });
@@ -133,6 +136,7 @@ window.statusUpdate = function (objStatus, objId) {
 }
 
 window.deleteObj = function(objId) {
+  debugger
     const newArr = todosArr.filter(todo => todo.Id != objId);    
     todosArr = newArr;
     writeStor(todosArr);

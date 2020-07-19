@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My ToDo App</title>
+  <link rel="stylesheet" type="text/css" href="../../W6/backup/css/todo.css">
+
+</head>
+
+<body>
+
+  <main>
+    <h1 class="card">Get-R-Done ToDos</h1>
+    <section id="user-input" class="card">
+      <div class="control">
+        <label for="newTodoInput">Add New Task</label>
+        <input type="text" name="newTodoInput" id="newTodoInput"/>
+      </div>
+      <button id="add-task-btn">Add Task</button>
+    </section>
+    <section id="todo-section" class="card">
+      <fieldset>
+        <legend>Select which Todos to list</legend>
+        <div class="Comp info singleLine">
+          <div class="info">
+            <label>Total</label>
+            <span id="numTodos"></span>
+          </div>
+          <div>
+            <label for="selAll">All</label>
+            <input type="radio" id="selAll" name="tasksFilter" />
+          </div>
+          <div>
+            <label for="selOpen">Open</label>
+            <input type="radio" id="selOpen" name="tasksFilter" />
+          </div>
+          <div>
+            <label for="selDone">Done</label>
+            <input type="radio" id="selDone" name="tasksFilter" />
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Selected list of Todos</legend>
+        <div id="todo-list" class="Component info">
+          
+        </div>
+      </fieldset>    
+    </section>
+    
+  </main>
+  <script src="../../W6/backup/scripts/todos.js" type="module"></script>
+</body>
+
+</html>
